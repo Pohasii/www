@@ -360,9 +360,10 @@ a#login_pop:hover, a#join_pop:hover {
   border: 1px solid rgba(6, 142, 166, 0.73);
   margin-top: 6px;
   padding: 5px 11px;
+  float: right;
 }
 .button:hover {
-	color: #124A68;
+	color: #0C374D;
 	background: rgba(6, 142, 166, 1);
 }
 .field {
@@ -371,4 +372,12 @@ a#login_pop:hover, a#join_pop:hover {
 }
 .field label {
 	float: left;
+	color: #74A7B0;
+}
+.field input {
+  background: #444;
+  border: 1px solid #74A7B0;
+  box-sizing: border-box;
+  padding: 4px;
+  color: white;
 }
