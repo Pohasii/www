@@ -44,20 +44,21 @@
 				</div>
 				<div class="field">
 					<label>Игры</label>
-					<label><?php 
-					$game = json_decode($result['game'], true);?>
-					<select name="game[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1">
-					<?php 
-						$games = call("SELECT * FROM `game`");
-						$i=0;
-						foreach($games as $value) {
-							if($game[$i] == $value['game']){
-								echo "<option value='".$value['game']."' selected>".$value['game']."</option>";
-							} else echo "<option value='".$value['game']."'>".$value['game']."</option>";
-							$i++;
-						}?>
-					</select>
-					</label>
+					<div class="selection-game">
+						<?php 
+						$game = json_decode($result['game'], true);?>
+						<select name="game[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1">
+						<?php 
+							$games = call("SELECT * FROM `game`");
+							$i=0;
+							foreach($games as $value) {
+								if($game[$i] == $value['game']){
+									echo "<option value='".$value['game']."' selected>".$value['game']."</option>";
+								} else echo "<option value='".$value['game']."'>".$value['game']."</option>";
+								$i++;
+							}?>
+						</select>
+					</div>
 				</div>
 				<div >
 						<input class="button" name="saveinf" type="submit" value="Сохранить">
