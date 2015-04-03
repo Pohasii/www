@@ -365,3 +365,10 @@ a#login_pop:hover, a#join_pop:hover {
 	color: #124A68;
 	background: rgba(6, 142, 166, 1);
 }
+.field {
+  clear: both;
+  text-align: right;
+}
+.field label {
+	float: left;
+}
