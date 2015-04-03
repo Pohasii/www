@@ -1,4 +1,4 @@
 <?php
 $title = "Главная страница";
-$content = index('general',$result);
+$content = index('index',$result);
 ?>
