@@ -369,10 +369,13 @@ a#login_pop:hover, a#join_pop:hover {
 .field {
   clear: both;
   text-align: right;
+  margin-bottom: 7px;
+  height: 21px;
 }
 .field label {
 	float: left;
 	color: #74A7B0;
+	margin-right: 8px;
 }
 .field input {
   background: #444;
@@ -380,4 +383,8 @@ a#login_pop:hover, a#join_pop:hover {
   box-sizing: border-box;
   padding: 4px;
   color: white;
+}
+.field input:focus {
+  outline: 0;
+  background: #646464;
 }
