@@ -9,22 +9,19 @@
 	<?php echo $result['participants'];?>
 	<?php echo date_format(date_create($result['date']), 'd.m.y');?>
 	
-	<?php
-	if(isset($_SESSION["keys"]) and isset($_SESSION["login"])){ ?>
-		<form method="post">
-			<input name="id" type="hidden" value='<?$_SESSION['id'];?>'>
-			<input name="nic" type="hidden" value='<?$_SESSION['nicgame'];?>'>
-			<input class="button" name="run" type="submit" value="Участвовать">
-			</form>
-	<?}?>
-
-	<?php
-	if($_POST['run'] == 'Участвовать'){
-		$idus=$_POST['id'];
-		$idtur=$result['id'];
-		$nicgame=$_POST['nic'];
-		
-		
-	}
+	<?php 
+	echo 'Участники:';
+	foreach($result2 as $value) { ?>
+		<a href="/user/<?php echo $value['id']; ?>"><?echo $value['nicgame'];?></a>
+	<?php } 
 	
+	if(isset($_SESSION["keys"]) and isset($_SESSION["login"])){ 
+	$id=$_SESSION['id'];
+	$nicgame=$_SESSION['nicgame'];
 	?>
+		<form method="post" action="/tournaments">
+			<input name="id" type="hidden" value='<?$id?>'>
+			<input name="nic" type="hidden" value='<?$nicgame?>'>
+			<input class="button" name="run" type="submit" value="Участвовать">
+		</form>
+	<?}?>
