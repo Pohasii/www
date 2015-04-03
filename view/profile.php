@@ -24,7 +24,7 @@
 	} else {
 ?>
 <div class="wrap">
-<h1>My page</h1>
+<h1>Личный кабинет</h1>
 		
 		<?php if ($result['img']=='') { $scr='avatar.png'; } else $scr=$result['img'];?>
 			<img src="/img/<?=$scr?>">

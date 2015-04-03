@@ -17,8 +17,9 @@
 
 <body>
 <header>
-	<div class=line> </div>
+	<!--<div class=line> </div>-->
     <div class="panel">
+	<div class="wrap">
 	<div style="width:100px; float: left;"><h1>Beta</h1></div>
 	<?php 
 			$login = $_SESSION["login"];
@@ -31,7 +32,7 @@
 			';} ?>
         
     </div>
-
+	</div>
 <div class="logo">
 <img src="/img/siteimg/logo3.jpg" alt="logo">
 </div>
