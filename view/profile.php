@@ -26,8 +26,8 @@
 <div class="wrap">
 <h1>My page</h1>
 		
-		<!--<?php if ($result['img']=='') { $scr='avatar.png'; } else $scr=$result['img'];?>
-			<img src="/img/<?=$scr?>">-->
+		<?php if ($result['img']=='') { $scr='avatar.png'; } else $scr=$result['img'];?>
+			<img src="/img/<?=$scr?>">
 	<div class="first-form">
 		<form method='post'>
 				<div class="field">
