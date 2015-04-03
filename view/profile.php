@@ -53,7 +53,7 @@
 						foreach($games as $value) {
 							if($game[$i] == $value['game']){
 								echo "<option value='".$value['game']."' selected>".$value['game']."</option>";
-							} else echo "<option value='".$value['game']."'>".$value['game']."</option>";
+							} else echo "<option value='".$value['game']."' ".$value['status'].">".$value['game']."</option>";
 							$i++;
 						}?>
 					</select>
