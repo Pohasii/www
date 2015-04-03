@@ -38,7 +38,7 @@
 					<label>Логин в играх</label>
 					<input name="nicname" type="text" value="<?=$result['nicgame']; ?>">
 				</div>
-	`			<div class="field">
+				<div class="field">
 					<label>дата регистрации</label>
 					<label><?=$result['dreg'];?></label>
 				</div>
