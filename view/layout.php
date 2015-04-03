@@ -121,7 +121,7 @@
 					<?php 
 					$result = call("SELECT * FROM `game`");
 					foreach($result as $value) { 
-					echo "<option value='".$value['game']."'>".$value['game']."</option>";
+					echo "<option value='".$value['game']."' ".$value['status'].">".$value['game']."</option>";
 					}
 					?>
 				</select>
