@@ -12,8 +12,19 @@
 	<?php
 	if(isset($_SESSION["keys"]) and isset($_SESSION["login"])){ ?>
 		<form method="post">
-			<input name="login" type="hidden" value='<?$_SESSION['login'];?>'>
+			<input name="id" type="hidden" value='<?$_SESSION['id'];?>'>
 			<input name="nic" type="hidden" value='<?$_SESSION['nicgame'];?>'>
 			<input class="button" name="run" type="submit" value="Участвовать">
 			</form>
 	<?}?>
+
+	<?php
+	if($_POST['run'] == 'Участвовать'){
+		$idus=$_POST['id'];
+		$idtur=$result['id'];
+		$nicgame=$_POST['nic'];
+		
+		
+	}
+	
+	?>

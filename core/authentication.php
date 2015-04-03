@@ -29,6 +29,8 @@ if($_POST['sub']=='Sing in'){
 			
 			$_SESSION['nicgame']=$result[0]['nicgame'];
 			
+			$_SESSION['id']=$result[0]['id'];
+			
 			$_SESSION["ip"]=$ip;
 			
 			$res = put("UPDATE `user` SET `keys`='$keys' WHERE `email`='$login'");
