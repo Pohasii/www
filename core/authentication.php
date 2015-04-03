@@ -265,5 +265,5 @@ if($_POST['sub']=='Sing in'){
 	}
 
 $title = "Главная страница";
-$content = index('general',$result);
+$content = index('index',$result);
 ?>
