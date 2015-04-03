@@ -1,7 +1,7 @@
 <div class="block-tidings">
 		<?php foreach($result as $value) { ?>
 			<div class="link" style="background-image:url(<?php echo $value['img']; ?>);">
-				<a href="/news/<?php echo $value['id']; ?>">
+				<a href="/tournaments/<?php echo $value['id']; ?>">
 					<span class="title"><?php echo $value['title'];?></span>
 					<span class="anounce"><span class="new-date"><?php echo date_format(date_create($value['date']), 'd.m.y');?></span></span>
 				</a>
