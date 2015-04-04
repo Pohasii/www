@@ -232,38 +232,16 @@ if($_POST['sub']=='Sing in'){
 				
 				if ($result[0]['email'] != $email){
 					
-						$security='zagadka';
-						
-						$password= md5("$password$security");
-						
+						$security='zagadka';						
+						$password= md5("$password$security");						
 						$res = put("INSERT INTO `user` (`email`, `pass`, `name`, `game`, `dreg`, `key`, `status`) values ('$email', '$password', '$name', '$game', '$regd', '$key', '0')");
 						if ($res){
-
-						$to  = "Mary &lt;$email>, " ; 
-
+						$to  = "$email"; 
 						$subject = "Активация аккаунта"; 
-
-						$message = " 
-						<html> 
-						<head> 
-						<title>Активация аккаунта</title> 
-						</head> 
-						<body> 
-						<p>Пожалуйста активируйте пожалуйста ваш аккаунт, для этого вам нужно
-						перейти в свой личный кабинет и ввести этот код - $key</p> 
-						<p>если вы не регистрировались на нашем сайте, просто проигнорируйсте это сообщение.</p>
-						</body> 
-						</html>"; 
-
-						$headers  = "Content-type: text/html; charset=windows-1251 \r\n"; 
-						$headers .= "From: Birthday Reminder <birthday@example.com>\r\n"; 
-						$headers .= "Bcc: birthday-archive@example.com\r\n"; 
-
-						mail($to, $subject, $message, $headers); 
-						
+						$message = "код активации - $key"; 
+						mail($to, $subject, $message); 
 						$result['ok'] = '<script>alert("Спасибо за рег");</script>'; 
-						} $result['ok'] = 'Четосмсактивации не отправилась :( попробоц с личного кб';
-						
+						} $result['ok'] = 'Что-то не работает, сообщите нам пожалуйста :() смс активации можно через лк заказать:)';
 				} else $result['errorlogin'] =  'Такой логин/E-mail уже занят';
 		} else $result['errorpass'] = 'пароли не совпадают';
 	}
