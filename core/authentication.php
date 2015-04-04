@@ -22,10 +22,10 @@ if($_POST['sub']=='Sing in'){
 			
 			$res = put("UPDATE `user` SET `keys`='$keys' WHERE `email`='$login'");
 			
-			if ($res){$error['codeError'] = 7; $error['relode'] = true; }// смс приветствия 
+			if ($res){$messegError['codeError'] = 7; $messegError['relode'] = true; }// смс приветствия 
 			
 			echo '<script>window.location.href = "/" </script>'; // перенаправление
-		} else {$error['codeError'] = 8; $error['relode'] = false;}
+		} else {$messegError['codeError'] = 8; $messegError['relode'] = false;}
 }
 
 
@@ -227,14 +227,14 @@ if($_POST['sub']=='Sing in'){
 						$subject = "Активация аккаунта"; 
 						$message = "код активации - $key"; 
 						mail($to, $subject, $message); 
-						$error['codeError'] = 9; $error['relode'] = true;
-						} else {$error['codeError'] = 10; $error['relode'] = false;}
-				} else {$error['codeError'] = 11; $error['relode'] = false;}
-		} else {$error['codeError'] = 12; $error['relode'] = false;}
+						$messegError['codeError'] = 9; $messegError['relode'] = true;
+						} else {$messegError['codeError'] = 10; $messegError['relode'] = false;}
+				} else {$messegError['codeError'] = 11; $messegError['relode'] = false;}
+		} else {$messegError['codeError'] = 12; $messegError['relode'] = false;}
 	}
 
-	$result2 = $error;
+$result2=$messegError;
 	
 $title = "Главная страница";
-$content = index('index',$result);
+$content = index('index',$result,$result2);
 ?>

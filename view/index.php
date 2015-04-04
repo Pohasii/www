@@ -1,4 +1,7 @@
 ﻿<?php 
+
+$messegError=$result2;
+messegErrors($messegError);
 if(isset($result['passErrorSingIn'])) echo $result['passErrorSingIn'];
 if(isset($result['errorlogin'])) echo $result['errorlogin'];
 if(isset($result['errorpass'])) echo $result['errorpass'];
