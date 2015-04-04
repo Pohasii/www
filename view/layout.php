@@ -2,15 +2,16 @@
 <html lang="ru">
 <head>
     <link rel="stylesheet" type="text/css" href="/style/style.css">
+	<link type="text/css" rel="stylesheet" href="/style/easy-responsive-tabs.css" />
     <meta charset="UTF-8" />
     <title><?php echo $title; ?></title>
 	
 	<link rel="icon" href="/img/favicon2.ico" type="image/x-icon">
 	<link rel="shortcut icon" href="/img/favicon2.ico" type="image/x-icon">
 	
-	
 	<script src="/view/jquery-2.1.3.min.js" type="text/javascript"></script>
 	<script src="/view/chosen.jquery.js" type="text/javascript"></script>
+	<script src="/view/easyResponsiveTabs.js" type="text/javascript"></script>
 	<link href="/view/chosen.css" rel="stylesheet">
 	
 </head>
