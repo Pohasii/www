@@ -18,9 +18,7 @@ if(@$action[0]){
 	
 	if($_POST['run'] == 'Участвовать'){
 		if($result3 == 'noparty') {
-			//print_r($_POST['id']);
-			//print_r($_POST['nic']);
-		
+
 			$idus=$_POST['idus'];
 			$idtur=$_POST['idtur'];
 			$nicgame=$_POST['nic'];
@@ -32,8 +30,6 @@ if(@$action[0]){
 		} else echo 'вы зарегистрированны';
 	} elseif($_POST['run'] == 'Отписаться') {
 		if($result3 == 'party') {
-			//print_r($_POST['id']);
-			//print_r($_POST['nic']);
 		
 			$idus=$_POST['idus'];
 			$idtur=$_POST['idtur'];
