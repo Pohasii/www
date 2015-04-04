@@ -2,43 +2,30 @@
 if($_POST['sub']=='Sing in'){
 
 		$login = $_POST['email'];
-		
 		$password = $_POST['pass'];
-
 		$login = che($login);
-		
 		$password = che($password);
-		
 		$security='zagadka';
-		
 		$password= md5("$password$security");
-		
 		$result = call("SELECT * FROM `user` WHERE `email`='$login'");
 		
 		if ($password == $result[0]['pass']){
 			
 			$d = date('Y m d H i s');
-			
 			$keys = "$password$d";
-			
 			$keys = md5("$keys");
-			
 			$_SESSION["keys"]=$keys;
-			
 			$_SESSION["login"]=$login;
-			
 			$_SESSION['nicgame']=$result[0]['nicgame'];
-			
 			$_SESSION['id']=$result[0]['id'];
-			
 			$_SESSION["ip"]=$ip;
 			
 			$res = put("UPDATE `user` SET `keys`='$keys' WHERE `email`='$login'");
 			
-			if ($res){$result['passErrorSingIn'] = '<script>alert("Добро пожаловать");</script>'; }// смс приветствия 
+			if ($res){$error['codeError'] = 7; $error['relode'] = true; }// смс приветствия 
 			
 			echo '<script>window.location.href = "/" </script>'; // перенаправление
-		}
+		} else {$error['codeError'] = 8; $error['relode'] = false;}
 }
 
 
@@ -240,12 +227,14 @@ if($_POST['sub']=='Sing in'){
 						$subject = "Активация аккаунта"; 
 						$message = "код активации - $key"; 
 						mail($to, $subject, $message); 
-						$result['ok'] = '<script>alert("Спасибо за рег");</script>'; 
-						} $result['ok'] = 'Что-то не работает, сообщите нам пожалуйста :() смс активации можно через лк заказать:)';
-				} else $result['errorlogin'] =  'Такой логин/E-mail уже занят';
-		} else $result['errorpass'] = 'пароли не совпадают';
+						$error['codeError'] = 9; $error['relode'] = true;
+						} else {$error['codeError'] = 10; $error['relode'] = false;}
+				} else {$error['codeError'] = 11; $error['relode'] = false;}
+		} else {$error['codeError'] = 12; $error['relode'] = false;}
 	}
 
+	$result2 = $error;
+	
 $title = "Главная страница";
 $content = index('index',$result);
 ?>
