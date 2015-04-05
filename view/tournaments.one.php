@@ -1,3 +1,5 @@
+
+<div class="wrap">
 	<?php messegErrors($messegError);?>
 	<img src="<?php echo $result['img'];?>" alt="<?php echo $result['title'];?>">
 	<h1><?php echo $result['title'];?></h1>
@@ -47,7 +49,7 @@
         </div>
 		
 		<?php echo date_format(date_create($result['date']), 'd.m.y');?>
-		
+<div>		
 		<script type="text/javascript">
 		$("#demoTab").easyResponsiveTabs({
 			type: 'accordion', //Типы: default, vertical, accordion      

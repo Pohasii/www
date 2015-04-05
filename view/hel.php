@@ -1,1 +1,3 @@
-<?php echo $result['text']; ?>
+<div class="wrap">
+	<?php echo $result['text']; ?>
+</div>
