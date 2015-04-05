@@ -1,5 +1,11 @@
 <div class="wrap">
 	<div class="tournaments">
+			<div class="theader link">
+				<span>Название</span>
+				<span>Формат</span>
+				<span>Дата</span>
+				<span>Игроки</span>
+			</div>
 			<?php foreach($result as $value) { ?>
 				<div class="link" style="background-image:url(<?php echo $value['img']; ?>);">
 					<a href="/tournaments/<?php echo $value['id']; ?>">
