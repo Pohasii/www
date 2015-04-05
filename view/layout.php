@@ -14,14 +14,17 @@
 	<script src="/view/easyResponsiveTabs.js" type="text/javascript"></script>
 	<link href="/view/chosen.css" rel="stylesheet">
 	
+	<link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+	
 </head>
 
 <body>
 <header>
 	<!--<div class=line> </div>-->
     <div class="panel">
+	<div style="width:100px; float: left;"><img src="/img/5.png" alt="logo"></div>
 	<div class="wrap">
-	<div style="width:100px; float: left;"><h1>Beta</h1></div>
 	<?php 
 			$login = $_SESSION["login"];
 			$result = call("SELECT * FROM `user` WHERE `email`='$login'");
