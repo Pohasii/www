@@ -1,8 +1,4 @@
 <?php 
-	
-	$messegError=$result2;
-	messegErrors($messegError);
-	
 	if($result['status'] == 0){
 	echo "
 		<form method='post'>
@@ -16,6 +12,10 @@
 	} else {
 ?>
 <div class="wrap">
+<?
+$messegError=$result2;
+messegErrors($messegError);
+?>
 <h1>Личный кабинет</h1>
 		
 		<?php if ($result['img']=='') { $scr='avatar.png'; } else $scr=$result['img'];?>

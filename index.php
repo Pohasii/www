@@ -13,10 +13,10 @@ function messegErrors($messegError){
 	$errors = call("SELECT * FROM `error`");
 		foreach($errors as $value){ 
 			if($value['numberError'] == $messegError['codeError'] and $messegError['relode']==true){
-				echo $value['textError'];
+				//echo $value['textError'];
 				echo "<script>document.location.href = document.location.href;</script>";
 			} elseif($value['numberError'] == $messegError['codeError'] and $messegError['relode']==false) {
-				echo $value['textError'];
+				echo "code:".$value['numberError']." ".$value['textError'];
 		}
 	}
 }

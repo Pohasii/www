@@ -52,7 +52,7 @@
 <div>		
 		<script type="text/javascript">
 		$("#demoTab").easyResponsiveTabs({
-			type: 'accordion', //Типы: default, vertical, accordion      
+			type: 'default', //Типы: default, vertical, accordion      
 			width: 'auto', //auto или любое значение ширины
 			fit: true,   // 100% пространства занимает в контейнере
 			activate: function() {} // Функция обратного вызова, используется, когда происходит переключение вкладок
