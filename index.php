@@ -9,6 +9,17 @@ $ip=$_SERVER['REMOTE_ADDR'];
 ini_set('display_errors','On');
 error_reporting(E_ALL|E_STRICT);
 */
+function messegErrors($messegError){
+	$errors = call("SELECT * FROM `error`");
+		foreach($errors as $value){ 
+			if($value['numberError'] == $messegError['codeError'] and $messegError['relode']==true){
+				echo $value['textError'];
+				echo "<script>document.location.href = document.location.href;</script>";
+			} elseif($value['numberError'] == $messegError['codeError'] and $messegError['relode']==false) {
+				echo $value['textError'];
+		}
+	}
+}
 
 function che($result){
 	$result = stripslashes($result);
@@ -25,11 +36,6 @@ function call($query) { //SELECT * FROM `ad` WHERE `id`='$id'
 	}
 	else while($row = mysql_fetch_array($result)) $return[] = $row;
 	return $return;
-}
-
-function errors(){
-	$errors = call("SELECT * FROM `error`");
-	return $errors;
 }
 
 function put($query) { //INSERT INTO `name` (`name`) values ('$name')

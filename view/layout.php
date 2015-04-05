@@ -14,6 +14,12 @@
 	<script src="/view/easyResponsiveTabs.js" type="text/javascript"></script>
 	<link href="/view/chosen.css" rel="stylesheet">
 	
+	<script type="text/javascript">
+	function reloadPage() {
+	window.location.reload()
+	}
+</script>
+	
 </head>
 
 <body>

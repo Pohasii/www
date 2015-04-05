@@ -1,15 +1,7 @@
 <?php 
 	
-	$email = $_SESSION['login'];
-	$errors = errors();
-	foreach($errors as $value) { 
-		if($value['numberError'] == $result2['codeError'] and $result2['relode']==true){
-			echo $value['textError'];
-			echo "<script>window.location.href = '/profile/$email' </script>";
-		} elseif($value['numberError'] == $result2['codeError']) {
-			echo $value['textError'];
-		}
-	}
+	$messegError=$result2;
+	messegErrors($messegError);
 	
 	if($result['status'] == 0){
 	echo "

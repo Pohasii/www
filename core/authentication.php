@@ -2,43 +2,30 @@
 if($_POST['sub']=='Sing in'){
 
 		$login = $_POST['email'];
-		
 		$password = $_POST['pass'];
-
 		$login = che($login);
-		
 		$password = che($password);
-		
 		$security='zagadka';
-		
 		$password= md5("$password$security");
-		
 		$result = call("SELECT * FROM `user` WHERE `email`='$login'");
 		
 		if ($password == $result[0]['pass']){
 			
 			$d = date('Y m d H i s');
-			
 			$keys = "$password$d";
-			
 			$keys = md5("$keys");
-			
 			$_SESSION["keys"]=$keys;
-			
 			$_SESSION["login"]=$login;
-			
 			$_SESSION['nicgame']=$result[0]['nicgame'];
-			
 			$_SESSION['id']=$result[0]['id'];
-			
 			$_SESSION["ip"]=$ip;
 			
 			$res = put("UPDATE `user` SET `keys`='$keys' WHERE `email`='$login'");
 			
-			if ($res){$result['passErrorSingIn'] = '<script>alert("Добро пожаловать");</script>'; }// смс приветствия 
+			if ($res){$messegError['codeError'] = 7; $messegError['relode'] = true; }// смс приветствия 
 			
 			echo '<script>window.location.href = "/" </script>'; // перенаправление
-		}
+		} else {$messegError['codeError'] = 8; $messegError['relode'] = false;}
 }
 
 
@@ -232,42 +219,22 @@ if($_POST['sub']=='Sing in'){
 				
 				if ($result[0]['email'] != $email){
 					
-						$security='zagadka';
-						
-						$password= md5("$password$security");
-						
+						$security='zagadka';						
+						$password= md5("$password$security");						
 						$res = put("INSERT INTO `user` (`email`, `pass`, `name`, `game`, `dreg`, `key`, `status`) values ('$email', '$password', '$name', '$game', '$regd', '$key', '0')");
 						if ($res){
-
-						$to  = "Mary &lt;$email>, " ; 
-
+						$to  = "$email"; 
 						$subject = "Активация аккаунта"; 
-
-						$message = " 
-						<html> 
-						<head> 
-						<title>Активация аккаунта</title> 
-						</head> 
-						<body> 
-						<p>Пожалуйста активируйте пожалуйста ваш аккаунт, для этого вам нужно
-						перейти в свой личный кабинет и ввести этот код - $key</p> 
-						<p>если вы не регистрировались на нашем сайте, просто проигнорируйсте это сообщение.</p>
-						</body> 
-						</html>"; 
-
-						$headers  = "Content-type: text/html; charset=windows-1251 \r\n"; 
-						$headers .= "From: Birthday Reminder <birthday@example.com>\r\n"; 
-						$headers .= "Bcc: birthday-archive@example.com\r\n"; 
-
-						mail($to, $subject, $message, $headers); 
-						
-						$result['ok'] = '<script>alert("Спасибо за рег");</script>'; 
-						} $result['ok'] = 'Четосмсактивации не отправилась :( попробоц с личного кб';
-						
-				} else $result['errorlogin'] =  'Такой логин/E-mail уже занят';
-		} else $result['errorpass'] = 'пароли не совпадают';
+						$message = "код активации - $key"; 
+						mail($to, $subject, $message); 
+						$messegError['codeError'] = 9; $messegError['relode'] = true;
+						} else {$messegError['codeError'] = 10; $messegError['relode'] = false;}
+				} else {$messegError['codeError'] = 11; $messegError['relode'] = false;}
+		} else {$messegError['codeError'] = 12; $messegError['relode'] = false;}
 	}
 
+$result2=$messegError;
+	
 $title = "Главная страница";
-$content = index('index',$result);
+$content = index('index',$result,$result2);
 ?>

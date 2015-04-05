@@ -17,10 +17,9 @@ if (@$action[0]=='') {
 				if($result[0]['key']==$code){
 					$res = put("UPDATE `user` SET `status`='1' WHERE `email`='$email'");
 					
-					$error['codeError'] = 1; 
-					$error['relode'] = true;
+					$messegError['codeError'] = 1; $messegError['relode'] = true;
 					
-				} else $error['codeError'] = 2;
+				} else {$messegError['codeError'] = 2; $messegError['relode'] = true; }
 		}
 		
 		if($_POST['saveinf']) {
@@ -34,7 +33,7 @@ if (@$action[0]=='') {
 			
 			$res = put("UPDATE `user` SET `name`='$name', `nicgame`='$nicname', `game`='$game' WHERE `email`='$email'");
 			
-			if($res) {$error['codeError'] = 3; $error['relode'] = true; }
+			if($res) {$messegError['codeError'] = 3; $messegError['relode'] = true; }
 			
 		}
 		
@@ -53,13 +52,13 @@ if (@$action[0]=='') {
 					$pass = md5("$pass$security");
 					$res = put("UPDATE `user` SET `pass`='$pass' WHERE `email`='$email'");
 					
-					if($res) {$error['codeError'] = 4; $error['relode'] = true; }
+					if($res) {$messegError['codeError'] = 4; $messegError['relode'] = true; }
 					
-				} else $error['codeError'] = 5;
-			} else $error['codeError'] = 6;
+				} else {$messegError['codeError'] = 5; $messegError['relode'] = false; }
+			} else {$messegError['codeError'] = 6; $messegError['relode'] = false; }
 		}
-
-		$result2=$error;
+		
+		$result2=$messegError;
 		$content = index('profile',$result[0],$result2);
 		} else echo '<script>window.location.href = "/" </script>';
 	}
