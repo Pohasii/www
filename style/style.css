@@ -400,7 +400,7 @@ a#login_pop:hover, a#join_pop:hover {
   display: inline-block;
 /*   word-wrap: break-word;
  */  text-align: center;
-	vertical-align: top;
+	vertical-align: middle;
  }
 .link span:first-child {
   width: 390px;
