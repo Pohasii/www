@@ -25,6 +25,8 @@ h2.resp-accordion {
     cursor: pointer;
     padding: 5px;
     display: none;
+	color: white;
+	
 }
 
 .resp-tab-content {
