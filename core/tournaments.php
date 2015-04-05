@@ -41,7 +41,7 @@ if(@$action[0]){
 		}
 	}
 	
-	$content = index('tournaments.one',$result[0],$result2,$result3);
+	$content = index('tournaments.one',$result[0],$result2,$result3,$messegError);
 } else {
 	$result = call("SELECT * FROM `tournaments` ORDER BY `date` DESC");
 	$title = "Турниры всего мира";
