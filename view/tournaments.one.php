@@ -1,4 +1,6 @@
+
 <div class="wrap">
+	<?php messegErrors($messegError);?>
 	<img src="<?php echo $result['img'];?>" alt="<?php echo $result['title'];?>">
 	<h1><?php echo $result['title'];?></h1>
 	<?php echo $result['demotitle'];?>
