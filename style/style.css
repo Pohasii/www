@@ -415,10 +415,19 @@ a#login_pop:hover, a#join_pop:hover {
   width: 100px;
 }
 .link span:nth-of-type(5) {
-  width: 187px;
+  width: 182px;
 }
 .link.theader span {
 	background:#373847;
+}
+.link.active span:first-child {
+	color: #DA6823;
+}
+.link.active span{
+	color: #7C7C7C;
+}
+.link.active:hover {
+	background: #000;
 }
 .avatar {
 	width: 100px;
