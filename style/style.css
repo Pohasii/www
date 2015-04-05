@@ -218,7 +218,7 @@ margin-top: 10px;
 }
 .panel a#login_pop, .panel a#join_pop {
       color: white;
-  background: #00b4ff;
+  background: #000;
     /*display: block;*/
     float: right;
     margin-right: 10px;
@@ -387,3 +387,57 @@ a#login_pop:hover, a#join_pop:hover {
 .selection-game{
 	display: inline-block;
 }
+.link a {
+  display: inline-block;
+  text-decoration: none;
+  color: #d3d3d3;
+  margin-bottom: 13px;
+  width:100%;
+}
+.link span {
+  margin-right: -3px;
+  padding: 5px 9px;
+}
+.link span:nth-of-type(3) {
+  background: rgb(104, 110, 228);
+}
+.link span:nth-of-type(2) {
+  background: rgb(184, 90, 90);
+}
+.link span:first-child {
+  background: rgb(47, 123, 47);
+}
+.link:nth-of-type(2)  span{background:transparent; color:#444;}
+.link:nth-of-type(2) span:nth-of-type(3) {
+  color: rgb(104, 110, 228);
+}
+.link:nth-of-type(2) span:nth-of-type(2) {
+  color: rgb(184, 90, 90);
+}
+.link:nth-of-type(2) span:first-child {
+  color: rgb(47, 123, 47);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
