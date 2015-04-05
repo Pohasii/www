@@ -1,10 +1,5 @@
 <div class="wrap">
 	<div class="block-tidings">
-			<div class="theader">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
 			<?php foreach($result as $value) { ?>
 				<div class="link" style="background-image:url(<?php echo $value['img']; ?>);">
 					<a href="/tournaments/<?php echo $value['id']; ?>">
