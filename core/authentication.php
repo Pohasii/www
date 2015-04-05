@@ -24,7 +24,7 @@ if($_POST['sub']=='Sing in'){
 			
 			if ($res){$messegError['codeError'] = 7; $messegError['relode'] = true; }// смс приветствия 
 			
-			echo '<script>window.location.href = "/" </script>'; // перенаправление
+			//echo '<script>window.location.href = "/" </script>'; // перенаправление
 		} else {$messegError['codeError'] = 8; $messegError['relode'] = false;}
 }
 

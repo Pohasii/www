@@ -25,9 +25,9 @@ if(@$action[0]){
 		
 			$res = put("INSERT INTO `participants`(`iduser`, `idtur`, `nicgame`) VALUES ('$idus','$idtur','$nicgame')");
 			if($res){
-				echo 'Вы зарегистрировались';
-			} else echo 'Ошибка регистрации';
-		} else echo 'вы зарегистрированны';
+				$messegError['codeError'] = 13; $messegError['relode'] = true;
+		} else {$messegError['codeError'] = 14; $messegError['relode'] = false;}
+		} else {$messegError['codeError'] = 15; $messegError['relode'] = false;}
 	} elseif($_POST['run'] == 'Отписаться') {
 		if($result3 == 'party') {
 		
@@ -36,8 +36,8 @@ if(@$action[0]){
 		
 			$res = put("DELETE FROM `participants` WHERE `iduser`='$idus' and `idtur`='$idtur'");
 			if($res){
-				echo 'Вы отписались от участия';
-			} else echo 'Ошибка';
+				$messegError['codeError'] = 16; $messegError['relode'] = true;
+			} else {$messegError['codeError'] = 17; $messegError['relode'] = false;}
 		}
 	}
 	
