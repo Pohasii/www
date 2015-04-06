@@ -50,7 +50,7 @@ function error() {
 	exit;
 }
 
-function index($name,$result='',$result2='',$result3='',$messegError) {
+function index($name,$result='',$result2='',$result3='',$messegError='') {
 	$path = 'view/'.$name.'.php';
 	ob_start();
 	if(!include($path)) error();
