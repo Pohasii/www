@@ -203,7 +203,7 @@ if($_POST['sub']=='Sing in'){
 		
 		$name = $_POST['name'];
 		$game = $_POST['game'];
-		$regd = date('Y m d');
+		$regd = date('Y-m-d');
 		$key = rand();
 		$key = md5("$key");
 		$game=json_encode($game);
@@ -226,8 +226,14 @@ if($_POST['sub']=='Sing in'){
 						$to  = "$email"; 
 						$subject = "Активация аккаунта"; 
 						$message = "код активации - $key"; 
-						mail($to, $subject, $message); 
+						$from = 'admin@prze.ru';
+						$er=mail($to, $subject, $message, 'From:'.$from);
+						if($er){
+							$messegError['codeError'] = 18; $messegError['relode'] = false;
+						} else {$messegError['codeError'] = 19; $messegError['relode'] = false;}
+						
 						$messegError['codeError'] = 9; $messegError['relode'] = true;
+						
 						} else {$messegError['codeError'] = 10; $messegError['relode'] = false;}
 				} else {$messegError['codeError'] = 11; $messegError['relode'] = false;}
 		} else {$messegError['codeError'] = 12; $messegError['relode'] = false;}

@@ -9,7 +9,7 @@ if (@$action[0]=='') {
 			
 		$title = $result[0]['title'];
 		
-		if($_POST['Activate']){
+		if($_POST['Activate'] == 'Activate'){
 			$code = $_POST['status'];
 			$code = che($code);
 			$email = $_SESSION['login'];
@@ -20,6 +20,18 @@ if (@$action[0]=='') {
 					$messegError['codeError'] = 1; $messegError['relode'] = true;
 					
 				} else {$messegError['codeError'] = 2; $messegError['relode'] = true; }
+		} elseif($_POST['Activate'] == 'Выслать') {
+			
+			
+						$to  = $_SESSION["login"];//$_SESSION["login"];  'admin@prze.ru'
+						$subject = "Активация аккаунта"; 
+						$message = "код активации - ".$result[0]['key']; 
+						$headers = 'admin@prze.ru';
+						$er=mail($to, $subject, $message, 'From:'.$headers);
+						if($er){
+							$messegError['codeError'] = 18; $messegError['relode'] = false;
+						} else {$messegError['codeError'] = 19; $messegError['relode'] = false;}
+			
 		}
 		
 		if($_POST['saveinf']) {
@@ -27,13 +39,17 @@ if (@$action[0]=='') {
 			$email = $_SESSION['login'];
 			
 			$name = che($_POST['name']);
-			$nicname = che($_POST['nicname']);
+			$nicgame = che($_POST['nicgame']);
 			$game = $_POST['game'];
 			$game = json_encode($game);
 			
-			$res = put("UPDATE `user` SET `name`='$name', `nicgame`='$nicname', `game`='$game' WHERE `email`='$email'");
 			
-			if($res) {$messegError['codeError'] = 3; $messegError['relode'] = true; }
+			$res = put("UPDATE `user` SET `name`='$name', `nicgame`='$nicgame', `game`='$game' WHERE `email`='$email'");
+			
+			if($res) {
+				$_SESSION['nicgame']=$nicgame;
+				$messegError['codeError'] = 3; $messegError['relode'] = true; 
+				}
 			
 		}
 		

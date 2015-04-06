@@ -1,17 +1,28 @@
-<?php 
+<div class="wrap">
+<?php
+	$messegError=$result2;
+	messegErrors($messegError);
+
 	if($result['status'] == 0){
 	echo "
 		<form method='post'>
 		<div>
 		<label>Введите код потверждения</label>
 		<input name='status' type='text'><br />
-	</div>
-	<input name='Activate' type='submit' value='Activate'>
-	</form>
+		</div>
+		<input name='Activate' type='submit' value='Activate'>
+		</form>
+	";
+	
+	echo "
+		<form method='post'>
+		<label>Выслать еще раз код</label>
+		<input name='Activate' type='submit' value='Выслать'>
+		</form>
 	";
 	} else {
 ?>
-<div class="wrap">
+
 <?
 $messegError=$result2;
 messegErrors($messegError);
@@ -28,7 +39,7 @@ messegErrors($messegError);
 				</div>
 				<div class="field">
 					<label>Логин в играх</label>
-					<input name="nicname" type="text" value="<?=$result['nicgame']; ?>">
+					<input name="nicgame" type="text" value="<?=$result['nicgame']; ?>">
 				</div>
 				<div class="field">
 					<label>дата регистрации</label>

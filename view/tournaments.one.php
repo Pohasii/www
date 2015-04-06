@@ -9,6 +9,7 @@
 	<span><?php echo $value['status'];?></span>
 	
 	<? 
+
 	$idus=$_SESSION['id'];
 	$nicgame=$_SESSION['nicgame'];
 	if($result3 == 'noparty') { ?>
