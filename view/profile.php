@@ -1,4 +1,5 @@
-<?php 
+<div class="wrap">
+<?php
 	$messegError=$result2;
 	messegErrors($messegError);
 
@@ -21,7 +22,7 @@
 	";
 	} else {
 ?>
-<div class="wrap">
+
 <?
 $messegError=$result2;
 messegErrors($messegError);

@@ -1,3 +1,4 @@
+<div class="wrap">
 <?php 
 
 $messegError=$result2;
@@ -11,3 +12,4 @@ if(isset($result['ok'])) echo $result['ok'];
 echo 'Main page';
 echo $result['text'];
 ?>	 
+</div>
