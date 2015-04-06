@@ -217,7 +217,7 @@ if($_POST['sub']=='Sing in'){
 		
 				$result = call("SELECT * FROM `user` WHERE `email`='$email'");
 				
-				if ($result[0]['email'] != $email){
+				if ($result[0] == false){
 					
 						$security='zagadka';						
 						$password= md5("$password$security");						
