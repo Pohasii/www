@@ -100,7 +100,7 @@
 <form method="post" action="/authentication">
 <a href="#x" class="overlay" id="join_form"></a>
 <div class="popup">
-    <h2>Зарегистрироваться</h2>
+    <h2>Регистрация</h2>
     <p>Введите здесь детальную информацию о себе</p>
     <div class="field auth">
         <label for="email">Логин (Email)</label>
