@@ -400,7 +400,7 @@ a#login_pop:hover, a#join_pop:hover {
   display: inline-block;
 /*   word-wrap: break-word;
  */  text-align: center;
-	vertical-align: top;
+	vertical-align: middle;
  }
 .link span:first-child {
   width: 262px;
@@ -423,13 +423,19 @@ a#login_pop:hover, a#join_pop:hover {
 .link.theader span {
 	background:#373847;
 }
+.link.active a {
+	  border-bottom: 1px solid rgba(68, 68, 68, 0.55);
+}
 .link.active span:first-child {
 	color: #DA6823;
+}
+.link.active span:nth-of-type(5){
+	color: rgb(126, 23, 23);;
 }
 .link.active span{
 	color: #7C7C7C;
 }
-.link.active:hover {
+.link.active a:hover {
 	background: #000;
 }
 .avatar {
