@@ -21,11 +21,7 @@
 
 <body>
 <header>
-	<!--<div class=line> </div>-->
     <div class="panel">
-	
-	<!--div style="width:100px; float: left;"><img src="/img/alpha150kh70.png" alt="logo"></div-->
-
 	<div class="wrap">
 	<div class="main-logo"><img src="/img/alpha150kh70.png" alt="logo"></img></div>
 	<?php 

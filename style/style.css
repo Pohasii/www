@@ -218,7 +218,7 @@ margin-top: 10px;
 }
 .panel a#login_pop, .panel a#join_pop {
       color: white;
-  background: #000;
+	background: #000;
     /*display: block;*/
     float: right;
     margin-right: 10px;
@@ -290,13 +290,21 @@ a#login_pop:hover, a#join_pop:hover {
     -o-transition: opacity .5s, top .5s;
     transition: opacity .5s, top .5s;
 }
+.popup input[type="submit"]{
+	color: white;
+	background: #000;
+    float: right;
+    margin-right: 10px;
+    padding: 9px 10px;
+    text-decoration: none;
+}
 .overlay:target+.popup {
     top: 50%;
     opacity: 1;
     visibility: visible;
 }
 .close {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #000;
     height: 30px;
     line-height: 30px;
     position: absolute;
@@ -313,9 +321,9 @@ a#login_pop:hover, a#join_pop:hover {
     border-radius: 15px;
 }
 .close:before {
-    color: rgba(255, 255, 255, 0.9);
+    color: #fff;
     content: "X";
-    font-size: 24px;
+    font-size: 18px;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
 }
 .close:hover {
@@ -422,7 +430,7 @@ a#login_pop:hover, a#join_pop:hover {
   width: 103px;
 }
 .link.theader span {
-	background:#373847;
+	background:#5F5F5F;
 }
 .link.active a {
 	  border-bottom: 1px solid rgba(68, 68, 68, 0.55);
@@ -456,9 +464,9 @@ a#login_pop:hover, a#join_pop:hover {
 .main-logo img {
 	max-width: 100%;
 }
-
-
-
+a:active{
+	padding-top: 3px;
+}
 
 
 
