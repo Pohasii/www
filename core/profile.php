@@ -9,7 +9,7 @@ if (@$action[0]=='') {
 			
 		$title = $result[0]['title'];
 		
-		if($_POST['Activate']){
+		if($_POST['Activate'] == 'Activate'){
 			$code = $_POST['status'];
 			$code = che($code);
 			$email = $_SESSION['login'];
@@ -20,6 +20,12 @@ if (@$action[0]=='') {
 					$messegError['codeError'] = 1; $messegError['relode'] = true;
 					
 				} else {$messegError['codeError'] = 2; $messegError['relode'] = true; }
+		} elseif($_POST['Activate'] == 'Выслать') {
+						$to  = $_SESSION["login"]; 
+						$subject = "Активация аккаунта"; 
+						$message = "код активации - $key"; 
+						$from = 'admin@prze.ru';
+						mail($to, $subject, $message, 'From:'.$from); 
 		}
 		
 		if($_POST['saveinf']) {

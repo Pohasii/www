@@ -5,9 +5,16 @@
 		<div>
 		<label>Введите код потверждения</label>
 		<input name='status' type='text'><br />
-	</div>
-	<input name='Activate' type='submit' value='Activate'>
-	</form>
+		</div>
+		<input name='Activate' type='submit' value='Activate'>
+		</form>
+	";
+	
+	echo "
+		<form method='post'>
+		<label>Выслать еще раз код</label>
+		<input name='Activate' type='submit' value='Выслать'>
+		</form>
 	";
 	} else {
 ?>
