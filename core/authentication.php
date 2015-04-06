@@ -227,8 +227,13 @@ if($_POST['sub']=='Sing in'){
 						$subject = "Активация аккаунта"; 
 						$message = "код активации - $key"; 
 						$from = 'admin@prze.ru';
-						mail($to, $subject, $message, 'From:'.$from); 
+						$er=mail($to, $subject, $message, 'From:'.$from);
+						if($er){
+							$messegError['codeError'] = 18; $messegError['relode'] = false;
+						} else {$messegError['codeError'] = 19; $messegError['relode'] = false;}
+						
 						$messegError['codeError'] = 9; $messegError['relode'] = true;
+						
 						} else {$messegError['codeError'] = 10; $messegError['relode'] = false;}
 				} else {$messegError['codeError'] = 11; $messegError['relode'] = false;}
 		} else {$messegError['codeError'] = 12; $messegError['relode'] = false;}

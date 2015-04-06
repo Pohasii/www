@@ -23,9 +23,12 @@ if (@$action[0]=='') {
 		} elseif($_POST['Activate'] == 'Выслать') {
 						$to  = $_SESSION["login"]; 
 						$subject = "Активация аккаунта"; 
-						$message = "код активации - $key"; 
+						$message = "код активации - ".$result[0]['key']; 
 						$from = 'admin@prze.ru';
-						mail($to, $subject, $message, 'From:'.$from); 
+						$er=mail($to, $subject, $message, 'From:'.$from);
+						if($er){
+							$messegError['codeError'] = 18; $messegError['relode'] = false;
+						} else {$messegError['codeError'] = 19; $messegError['relode'] = false;}
 		}
 		
 		if($_POST['saveinf']) {
