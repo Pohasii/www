@@ -73,7 +73,7 @@
 
 <div class="footer">
 <footer class="foot">
- Все, всееее пизец!
+ WTW Digital
 </footer>
 </div>
 </body>
