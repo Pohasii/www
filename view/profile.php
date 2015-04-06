@@ -39,7 +39,7 @@ messegErrors($messegError);
 				</div>
 				<div class="field">
 					<label>Логин в играх</label>
-					<input name="nicname" type="text" value="<?=$result['nicgame']; ?>">
+					<input name="nicgame" type="text" value="<?=$result['nicgame']; ?>">
 				</div>
 				<div class="field">
 					<label>дата регистрации</label>

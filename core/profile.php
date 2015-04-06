@@ -23,7 +23,7 @@ if (@$action[0]=='') {
 		} elseif($_POST['Activate'] == 'Выслать') {
 			
 			
-						$mail_to  = 'admin@prze.ru';//$_SESSION["login"]; 
+						$mail_to  = $_SESSION["login"];//$_SESSION["login"];  'admin@prze.ru'
 						$subject = "Активация аккаунта"; 
 						$message = "код активации - ".$result[0]['key']; 
 						$headers = 'From:admin@prze.ru';/*
@@ -150,15 +150,15 @@ function server_parse($socket, $response, $line = __LINE__) {
 			$email = $_SESSION['login'];
 			
 			$name = che($_POST['name']);
-			$nicname = che($_POST['nicname']);
+			$nicgame = che($_POST['nicgame']);
 			$game = $_POST['game'];
 			$game = json_encode($game);
 			
 			
-			$res = put("UPDATE `user` SET `name`='$name', `nicgame`='$nicname', `game`='$game' WHERE `email`='$email'");
+			$res = put("UPDATE `user` SET `name`='$name', `nicgame`='$nicgame', `game`='$game' WHERE `email`='$email'");
 			
 			if($res) {
-				$nicname = $_SESSION['nicgame'];
+				$_SESSION['nicgame']=$nicgame;
 				$messegError['codeError'] = 3; $messegError['relode'] = true; 
 				}
 			

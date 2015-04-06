@@ -38,6 +38,13 @@ function call($query) { //SELECT * FROM `ad` WHERE `id`='$id'
 	return $return;
 }
 
+function checkCounts($query) { //SELECT * FROM `ad` WHERE `id`='$id'
+	$result=mysql_query($query) or $return = FALSE;
+	$result=mysql_num_rows($result);
+	$return=$result;
+	return $return;
+}
+
 function put($query) { //INSERT INTO `name` (`name`) values ('$name')
 	$return = TRUE;
 	mysql_query($query) or $return = FALSE;

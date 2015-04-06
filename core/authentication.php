@@ -203,7 +203,7 @@ if($_POST['sub']=='Sing in'){
 		
 		$name = $_POST['name'];
 		$game = $_POST['game'];
-		$regd = date('Y m d');
+		$regd = date('Y-m-d');
 		$key = rand();
 		$key = md5("$key");
 		$game=json_encode($game);
