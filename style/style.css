@@ -426,6 +426,9 @@ a#login_pop:hover, a#join_pop:hover {
 .link.active span:first-child {
 	color: #DA6823;
 }
+.link.active span:nth-of-type(5){
+	color: rgb(126, 23, 23);;
+}
 .link.active span{
 	color: #7C7C7C;
 }
