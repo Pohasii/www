@@ -1,4 +1,4 @@
 <?php
-$title = "Новостная лента";
+$title = "РќРѕРІРѕСЃС‚РЅР°СЏ Р»РµРЅС‚Р°";
 $content = index('news',$result);
 ?>
