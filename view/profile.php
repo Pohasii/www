@@ -1,4 +1,7 @@
 <?php 
+	$messegError=$result2;
+	messegErrors($messegError);
+
 	if($result['status'] == 0){
 	echo "
 		<form method='post'>
