@@ -154,9 +154,13 @@ function server_parse($socket, $response, $line = __LINE__) {
 			$game = $_POST['game'];
 			$game = json_encode($game);
 			
+			
 			$res = put("UPDATE `user` SET `name`='$name', `nicgame`='$nicname', `game`='$game' WHERE `email`='$email'");
 			
-			if($res) {$messegError['codeError'] = 3; $messegError['relode'] = true; }
+			if($res) {
+				$nicname = $_SESSION['nicgame'];
+				$messegError['codeError'] = 3; $messegError['relode'] = true; 
+				}
 			
 		}
 		

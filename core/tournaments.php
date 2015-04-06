@@ -37,13 +37,13 @@ if(@$action[0]){
 		} else {$messegError['codeError'] = 14; $messegError['relode'] = false;}
 		} else {$messegError['codeError'] = 15; $messegError['relode'] = false;}
 	} elseif($_POST['run'] == 'Отписаться') {
-		if($result3 == 'party') {
+		if($result3) {
 		
 			$idus=$_POST['idus'];
 			$idtur=$_POST['idtur'];
 		
 			$res = put("DELETE FROM `participants` WHERE `iduser`='$idus' and `idtur`='$idtur'");
-			if($res){
+			if($res == true){
 				
 				$counts = call("SELECT COUNT(*) FROM `participants` WHERE `idtur`='$action[0]'");
 				$res = put("UPDATE `tournaments` SET `count`='$counts' WHERE `id`='$action[0]'");
