@@ -120,6 +120,7 @@
     </div>
     <div class="field auth">
         <label for="lastname">Игра</label>
+		
     <div class="second-column-block-element">
 
 		<select name="game[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1">
@@ -129,8 +130,9 @@
 					echo "<option value='".$value['game']."' ".$value['status'].">".$value['game']."</option>";
 					}
 					?>
-				</select>
-		</div>	  
+		</select>
+	</div>	
+	
     </div>
     <input name="sub" type="submit" value="Sing up">&nbsp;&nbsp;&nbsp;или&nbsp;&nbsp;&nbsp;<a href="#login_form" id="login_pop">Войти</a>
 
