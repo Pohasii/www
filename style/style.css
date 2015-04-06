@@ -418,7 +418,7 @@ a#login_pop:hover, a#join_pop:hover {
   width: 50px;
 }
 .link span:nth-of-type(6) {
-  width: 100px;
+  width: 103px;
 }
 .link.theader span {
 	background:#373847;
@@ -446,7 +446,15 @@ a#login_pop:hover, a#join_pop:hover {
 .avatar img {
 	width: 100%;
 }
-
+.main-logo {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 123px;
+}
+.main-logo img {
+	max-width: 100%;
+}
 
 
 
