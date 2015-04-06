@@ -23,7 +23,7 @@
 <header>
 	<!--<div class=line> </div>-->
     <div class="panel">
-	<div style="width:100px; float: left;"><img src="/img/5.png" alt="logo"></div>
+	<div style="width:100px; float: left;"><img src="/img/alpha150kh70.png" alt="logo"></div>
 	<div class="wrap">
 	<?php 
 			$login = $_SESSION["login"];
