@@ -5,6 +5,9 @@
 	<h1><?php echo $result['title'];?></h1>
 	<?php echo $result['demotitle'];?>
 	
+	<span><?php echo $value['count'];?></span>
+	<span><?php echo $value['status'];?></span>
+	
 	<? 
 	$idus=$_SESSION['id'];
 	$nicgame=$_SESSION['nicgame'];

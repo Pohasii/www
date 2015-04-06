@@ -15,7 +15,7 @@
 						<span ><?php echo $value['format'];?></span>
 						<span ><?php echo $value['demotitle'];?></span>
 						<span ><?php echo date_format(date_create($value['date']), 'd.m.y');?></span>
-						<span>6</span>
+						<span><?php echo $value['count'];?></span>
 						<span><?php echo $value['status'];?></span>
 					</a>
 				</div>
