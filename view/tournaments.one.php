@@ -12,7 +12,7 @@
 
 	$idus=$_SESSION['id'];
 	$nicgame=$_SESSION['nicgame'];
-	if($result3 == 'noparty') { ?>
+	if($result3 == 'noparty' and $nicgame != '') { ?>
 	<form method='post' action='/tournaments/<?php echo $result['id'];?>'>
 			<input name='idus' type='hidden' value='<?php echo $idus;?>'>
 			<input name='idtur' type='hidden' value='<?php echo $result['id'];?>'>
@@ -25,7 +25,7 @@
 		<input name='idtur' type='hidden' value='<?php echo $result['id'];?>'>
 		<input name='run' type='submit' value='Отписаться'>
 	</form>
-	<? } else echo 'Что-бы стать участником нужно авторизоваться/зарегистрироваться'; ?>
+	<? } else echo 'для участия Авторизуйтесь, либо вы не ввели логин(в играх) в личном кабинете'; ?>
 	
 	<?php echo $result['participants'];?>
 
