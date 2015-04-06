@@ -82,11 +82,11 @@
 	<form method="post" action="/authentication" id="authform" name="authform">
     <h2>Добро пожаловать гости!</h2>
     <p>Введите ваш логин и пароль здесь</p>
-    <div>
+    <div class="field auth">
         <label for="login">Логин</label>
         <input type="email" id="login" name="email"/>
     </div>
-    <div>
+    <div class="field auth">
         <label for="password">Пароль</label>
         <input type="password" name="pass" id="password"/>
     </div>
@@ -102,23 +102,23 @@
 <div class="popup">
     <h2>Зарегистрироваться</h2>
     <p>Введите здесь детальную информацию о себе</p>
-    <div>
+    <div class="field auth">
         <label for="email">Логин (Email)</label>
         <input type="email" id="email" name="email" autofocus="autofocus" placeholder="e-mail@email.com" required />
     </div>
-    <div>
+    <div class="field auth">
         <label for="pass">Пароль</label>
         <input type="password" name="pass" id="pass" placeholder="password" required />
     </div>
-	<div>
+    <div class="field auth">
         <label for="pass">Повторите</label>
         <input type="password" name="pass2" id="pass" placeholder="password" required />
     </div>
-    <div>
+    <div class="field auth">
         <label for="firstname">Имя</label>
         <input type="text" id="firstname" name="name" placeholder="name" required />
     </div>
-    <div>
+    <div class="field auth">
         <label for="lastname">Игра</label>
     <div class="second-column-block-element">
 
