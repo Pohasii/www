@@ -13,4 +13,4 @@ RewriteCond	%{REQUEST_URI}	!humans.txt
 RewriteCond	%{REQUEST_URI}	!sitemap.xml
 RewriteCond	%{REQUEST_URI}	!favicon.*
 RewriteCond	%{REQUEST_URI}	!index.php
-RewriteRule	^(.*)$	index.php?q=$1 [QSA]
+RewriteRule	^(.*)$	index.php?alpha=$1 [QSA]

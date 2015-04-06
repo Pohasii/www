@@ -72,7 +72,7 @@ function clear($value) {
 }
 
 //routing
-$priQuery = explode("/",clear($_GET["q"]));
+$priQuery = explode("/",clear($_GET["alpha"]));
 $query = $priQuery;
 
 if($query[0] != '') {
