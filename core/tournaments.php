@@ -16,6 +16,10 @@ if(@$action[0]){
 		}
 	}
 	
+	/*if($result[0]['date']<=$result[0]['start']<=$result[0]['end']){
+		
+	}*/
+	
 	if($_POST['run'] == 'Участвовать'){
 		if($result3 == 'noparty') {
 
@@ -25,6 +29,10 @@ if(@$action[0]){
 		
 			$res = put("INSERT INTO `participants`(`iduser`, `idtur`, `nicgame`) VALUES ('$idus','$idtur','$nicgame')");
 			if($res){
+				
+				$counts = call("SELECT COUNT(*) FROM `participants` WHERE `idtur`='$action[0]'");
+				$res = put("UPDATE `tournaments` SET `count`='$counts' WHERE `id`='$action[0]'");
+				
 				$messegError['codeError'] = 13; $messegError['relode'] = true;
 		} else {$messegError['codeError'] = 14; $messegError['relode'] = false;}
 		} else {$messegError['codeError'] = 15; $messegError['relode'] = false;}
@@ -36,6 +44,10 @@ if(@$action[0]){
 		
 			$res = put("DELETE FROM `participants` WHERE `iduser`='$idus' and `idtur`='$idtur'");
 			if($res){
+				
+				$counts = call("SELECT COUNT(*) FROM `participants` WHERE `idtur`='$action[0]'");
+				$res = put("UPDATE `tournaments` SET `count`='$counts' WHERE `id`='$action[0]'");
+				
 				$messegError['codeError'] = 16; $messegError['relode'] = true;
 			} else {$messegError['codeError'] = 17; $messegError['relode'] = false;}
 		}

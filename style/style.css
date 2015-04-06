@@ -403,19 +403,22 @@ a#login_pop:hover, a#join_pop:hover {
 	vertical-align: middle;
  }
 .link span:first-child {
-  width: 390px;
+  width: 262px;
 }
 .link span:nth-of-type(2) {
-  width: 100px;
+  width: 50px;
 }
 .link span:nth-of-type(3) {
-  width: 100px;
+  width: 330px;
 }
 .link span:nth-of-type(4) {
-  width: 100px;
+  width: 60px;
 }
 .link span:nth-of-type(5) {
-  width: 182px;
+  width: 50px;
+}
+.link span:nth-of-type(6) {
+  width: 100px;
 }
 .link.theader span {
 	background:#373847;
