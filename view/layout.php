@@ -21,6 +21,7 @@
 
 <body>
 <header>
+	<!--<div class=line> </div>-->
     <div class="panel">
 	<div class="wrap">
 	<div class="main-logo"><img src="/img/alpha150kh70.png" alt="logo"></img></div>
@@ -28,7 +29,7 @@
 			$login = $_SESSION["login"];
 			$result = call("SELECT * FROM `user` WHERE `email`='$login'");
 			if((isset($_SESSION["login"]) && isset($_SESSION["keys"])) && ($_SESSION["login"] == $result[0]["email"] && $_SESSION["keys"] == $result[0]["keys"])) {
-				echo "<a id='login_pop' href='/profile/".$_SESSION["login"]."'>Добро пожаловать,".$_SESSION["login"]."</a> <a id='login_pop' href='/layout/exit' > выйти </a>";
+				echo "<a id='login_pop' href='/profile/".$_SESSION["login"]."'>".$_SESSION["login"]."</a> <a id='login_pop' href='/layout/exit' > выйти </a>";
 			} else { echo '
 			<a href="#login_form" id="login_pop">Войти</a>
 			<a href="#join_form" id="join_pop">Зарегистрироваться</a>
