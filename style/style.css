@@ -222,11 +222,12 @@ margin-top: 10px;
     /*display: block;*/
     float: right;
     margin-right: 10px;
-    padding: 5px 10px;
+    padding: 9px 10px;
     text-decoration: none;
+    font-size: 18px;
 }
 a#login_pop:hover, a#join_pop:hover {
-    border-color: #00B4FF;
+    background: #212121;
 }
 
 .overlay {
