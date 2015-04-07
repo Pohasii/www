@@ -635,7 +635,10 @@ a#login_pop:hover, a#join_pop:hover {
 	width: 30%;
 	transition: .5s;
 }
-.user-lines:nth-of-type(n):hover > .user-divider:nth-of-type(n){background: #0A5E83 ;}
+.user-lines:nth-of-type(n):hover > .user-divider:nth-of-type(n){
+	background: #0A5E83 ;
+	cursor: default;
+	}
 
 
 
