@@ -19,6 +19,7 @@ ul.resp-tabs-list {
     padding: 0px;
     background-color: #444;
     clear: left;
+	color: white;
 }
 
 h2.resp-accordion {
@@ -155,7 +156,6 @@ h2.resp-tab-active {
 h2.resp-accordion:first-child {
     border-top: 1px solid #c1c1c1 !important;
 }
-
 /*Here your can change the breakpoint to set the accordion, when screen resolution changed*/
 @media only screen and (max-width: 768px) {
     ul.resp-tabs-list {
