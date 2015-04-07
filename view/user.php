@@ -14,11 +14,11 @@
 	
 	<!--div class="avatar"><img src="/img/ava.jpg"></img></div-->
 	<div class="user-lines">
-		<label class="user-label">ник</label>
+		<label class="user-label">Ник</label>
 		<div class="user-divider"><?php echo $result['nicgame']; ?></div>
 	</div>
 	<div class="user-lines">
-		<label class="user-label">дата регистрации</label>
+		<label class="user-label">Дата регистрации</label>
 		<div class="user-divider"><?php echo $result['dreg'];?></div>
 	</div>
 	<div class="user-lines">

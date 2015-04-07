@@ -564,7 +564,7 @@ a#login_pop:hover, a#join_pop:hover {
 		border-color 1.5s;
 }
 .imgholder:hover .outer1{
-	border-color:#0088EA #7FC9FF #0088EA #7FC9FF;
+	border-color:#7CD4DF #0A5E83 #7CD4DF #0A5E83;
 	box-shadow:0 0 10px #0285E2;
 	-moz-box-shadow:0 0 10px #0285E2;
 	-webkit-box-shadow:0 0 10px #0285E2;
@@ -581,7 +581,7 @@ a#login_pop:hover, a#join_pop:hover {
 	z-index:1;
 	
 	border:10px solid;
-	border-color: #D6E5FC #9BC8FF #D6E5FC #9BC8FF;
+	border-color: #0A5E83 #7CD4DF #0A5E83 #7CD4DF;
 	box-shadow:0 0 20px #8EB9FF;
 	-moz-box-shadow:0 0 20px #8EB9FF;
 	-webkit-box-shadow:0 0 20px #8EB9FF;
@@ -613,7 +613,29 @@ a#login_pop:hover, a#join_pop:hover {
 }
 
 /* end avatar */
-
+=========User Info========
+.user-lines {
+	margin-bottom: 2px;
+}
+.user-lines label {
+	display: inline-block;
+	color: rgba(255, 255, 255, 1);
+	font-size: 1em;
+	width: 15%;
+	padding: 5px 10px;
+	color: gray;
+	transition: .2s;
+}
+.user-lines .user-divider{
+	display: inline-block;
+	border: 1px solid #0A5E83;
+	font-size: 1em;
+	color: #fff;
+	padding: 6px 10px;
+	width: 30%;
+	transition: .5s;
+}
+.user-lines:nth-of-type(n):hover > .user-divider:nth-of-type(n){background: #0A5E83 ;}
 
 
 
