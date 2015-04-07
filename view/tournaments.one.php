@@ -53,7 +53,7 @@
         </div>
 		
 		<?php echo date_format(date_create($result['date']), 'd.m.y');?>
-<div>		
+</div>		
 		<script type="text/javascript">
 		$("#demoTab").easyResponsiveTabs({
 			type: 'accordion', //Типы: default, vertical, accordion      
