@@ -453,7 +453,7 @@ a#login_pop:hover, a#join_pop:hover {
 	height:120px;
 	border-radius:100px;
 	float:left;
-	margin:40px 30px;
+	margin: 0 30px;
 }
 /* thumbnails style */
 .imgholder img{
