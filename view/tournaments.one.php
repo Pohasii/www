@@ -54,11 +54,11 @@
 		
 		<?php echo date_format(date_create($result['date']), 'd.m.y');?>
 </div>		
-		<script type="text/javascript">
+		<script type="text/javascript">/*
 		$("#demoTab").easyResponsiveTabs({
 			type: 'accordion', //Типы: default, vertical, accordion      
 			width: 'auto', //auto или любое значение ширины
 			fit: true,   // 100% пространства занимает в контейнере
 			activate: function() {} // Функция обратного вызова, используется, когда происходит переключение вкладок
-			});
+			});*/
 		</script>
