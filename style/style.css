@@ -353,7 +353,6 @@ a#login_pop:hover, a#join_pop:hover {
   clear: both;
   text-align: right;
   margin-bottom: 7px;
-  height: 21px;
 }
 .field label {
 	float: left;
