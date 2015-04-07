@@ -18,16 +18,6 @@ html, body {
     background-color:#212121;
 	color: #fff;
 }
-
-.clearf {
-	width: 100%;
-	margin: 0 auto;
-	background-color: ;
-	float: none;
-	clear: both;
-	height: 0;
-}
-
 .wrap {
 	width: 960px;
 	margin: 0 auto;
@@ -62,8 +52,7 @@ background-color:#01BFE1;
 
 .foot {	
 	background: rgba(1, 170, 200, 0.8);
-	position: relative;
-	height: 100px;
+	/*position: relative;*/
 }
 
 .logo {
@@ -391,8 +380,8 @@ a#login_pop:hover, a#join_pop:hover {
   display: inline-block;
   text-decoration: none;
   color: #d3d3d3;
-  margin-bottom: 13px;
   width:100%;
+  padding: 4px 0;
 }
 .link span {
   margin-right: -5px;
@@ -652,88 +641,9 @@ a#login_pop:hover, a#join_pop:hover {
 	}
 
 
-/* меню на главной стр */
 
-/* mark with differing style */
-.mark {
-	font-weight: 400;
-}
-/* nav */
-.nav2 {
-	list-style: none;
-}
-.nav2 li {
-	float: left;
-	position: relative;
-	background: #34495e;
-}
-/* круглые края */
-.nav2 > li:first-of-type {
-	border-radius: 5px 0 0 5px;
-}
-.nav2 > li:last-of-type {
-	border-radius: 0 5px 5px 0;
-}
-/* блоки ссылок */
-.nav2 li a {
-	display: block;
-	text-decoration: none;
-	color: #fff;
-	padding: 12px;
-	border-radius: 5px;
-}
-/* выпадающее меню */
-.sub-nav2 {
-	position: absolute;
-	border-top: 15px solid transparent;
-	left: -9999px;
-	list-style:none;
-	padding:0;
-}
-/* make submenu reappear */
-.nav2 li:hover .sub-nav2 {
-	left: 0;
-}
-/* triangle */
-.triangle {
-	width: 0; 
-	height: 0; 
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-bottom: 10px solid #34495e;
-	position: absolute;
-	margin-top: 5px;
-	left: -9999px;
-}
-/* reappear */
-.nav2 li:hover .triangle {
-	left: 15px;
-}
-/* prevent multi line links */
-.sub-nav2 li {
-	white-space: nowrap;
-}
-/* закругленные края */
-.sub-nav2 > li:first-of-type {
-	border-radius: 5px 5px 0 0;
-}
-.sub-nav2 > li:last-of-type {
-	border-radius: 0 0 5px 5px;
-}
-/* верхний уровень при наведении */
-.nav2 > li:hover > a {
-	background: #2C3E50;
-	transition: background ease .5s;
-} 
-/* ссылки подменю */
-.sub-nav2 a {
-	font-size: 90%;
-	margin: 3px;
-	transition: background ease .3s;
-}
-.sub-nav2 a:hover {
-	background: #E74C3C;
-}
+
+
 
 
 
