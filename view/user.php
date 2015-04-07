@@ -7,7 +7,7 @@
 		<div class="outer2 circle"></div>
 		<figure>
 			<img src="<?php echo $scr;?>" />
-			<figcaption class="caption"><?php echo $result['name'];?></figcaption>
+			<figcaption class="caption" align=center><?php echo $result['name'];?></figcaption>
 		</figure>
 	</div>
 	
