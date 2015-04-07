@@ -68,7 +68,7 @@ height: 300px;
 
 #menu {
 width: 100%;
-margin-top: 10px;
+margin-top: 22px;
 }
 
 #nav,#nav ul {
@@ -77,8 +77,8 @@ margin-top: 10px;
     padding: 0;
 }
 #nav {
-    background: url('../img/menu/menu_bg.png') no-repeat scroll 0 0 transparent;
-    clear: both;
+/*     background: url('../img/menu/menu_bg.png') no-repeat scroll 0 0 transparent;*/ 
+	clear: both;
     font-size: 12px;
     height: 58px;
     padding: 0 0 0 9px;
@@ -117,7 +117,7 @@ margin-top: 10px;
     transition: transform 0.1s linear;
 }
 #nav li {
-    background: url('../img/menu/menu_line.png') no-repeat scroll right 5px transparent;
+    background: url('../img/menu/menu_line.png') no-repeat scroll right transparent;
     float: left;
     position: relative;
 }
@@ -126,8 +126,7 @@ margin-top: 10px;
     display: block;
     float: left;
     font-weight: normal;
-    height: 30px;
-    padding: 23px 20px 0;
+    padding: 18px;
     position: relative;
     text-decoration: none;
     text-shadow: 1px 1px 1px #000000;
