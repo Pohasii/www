@@ -27,7 +27,15 @@
 $messegError=$result2;
 messegErrors($messegError);
 ?>
-<h1>Личный кабинет</h1>
+
+<div id="demoTab" style="font-size: 16px; color:#F00;">
+            <ul class="resp-tabs-list">
+                <li> <h1>Личный кабинет</h1>  </li>
+                <?php if($result['special'] == 0){?><li> Админ панель </li><?php } ?>
+				</ul> 
+<? //личный кабинет ?>
+<div class="resp-tabs-container">
+                <div>
 		
 		<?php if ($result['img']=='') { $scr='avatar.png'; } else $scr=$result['img'];?>
 			<img src="/img/<?=$scr?>">
@@ -85,5 +93,17 @@ messegErrors($messegError);
 		<input class="button" name="newpass" type="submit" value="Update">
 	</form>
 	</div>
+	</div>
+<? //личный кабинет ?>
+
+<? //админ панель ?>
+<?php if($result['special'] == 0){?>
+    <div>       
+     <li> Админ панель </li>
+	</div>
+<?php } ?>
+<? //админ панель ?>
+	</div>
 </div>
 	<? } ?>
+</div>
