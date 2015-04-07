@@ -31,7 +31,7 @@ messegErrors($messegError);
 <div id="demoTab" style="font-size: 16px; color:#F00;">
             <ul class="resp-tabs-list">
                 <li> <h1>Личный кабинет</h1>  </li>
-                <?php if($result['special'] == 0){?><li> Админ панель </li><?php } ?>
+                <?php if($result['special'] == 1){?><li> Админ панель </li><?php } ?>
 				</ul> 
 <? //личный кабинет ?>
 <div class="resp-tabs-container">
@@ -97,7 +97,7 @@ messegErrors($messegError);
 <? //личный кабинет ?>
 
 <? //админ панель ?>
-<?php if($result['special'] == 0){?>
+<?php if($result['special'] == 1){?>
     <div>       
      <li> Админ панель </li>
 	</div>
