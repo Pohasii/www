@@ -30,6 +30,15 @@ html, body {
     padding: 0;
 }
 
+.clearf {
+	width: 100%;
+	margin: 0 auto;
+	background-color: ;
+	float: none;
+	clear: both;
+	height: 0;
+}
+
 .line {
 height:1px;
 width: 100%;
@@ -359,7 +368,7 @@ a#login_pop:hover, a#join_pop:hover {
 	color: rgba(0, 180, 255, 0.47);
 	margin-right: 8px;
 }
-.field input, textarea{
+.field input{
   background: #444;
   border: 0;
   box-sizing: border-box;
@@ -614,35 +623,6 @@ a#login_pop:hover, a#join_pop:hover {
 }
 
 /* end avatar */
-=========User Info========
-.user-lines {
-	margin-bottom: 2px;
-}
-.user-lines label {
-	display: inline-block;
-	color: rgba(255, 255, 255, 1);
-	font-size: 1em;
-	width: 15%;
-	padding: 5px 10px;
-	color: gray;
-	transition: .2s;
-}
-.user-lines .user-divider{
-	display: inline-block;
-	border: 1px solid #0A5E83;
-	font-size: 1em;
-	color: #fff;
-	padding: 6px 10px;
-	width: 30%;
-	transition: .5s;
-}
-.user-lines:nth-of-type(n):hover > .user-divider:nth-of-type(n){
-	background: #0A5E83 ;
-	cursor: default;
-	}
-/* меню на главной стр */
-
-/* mark with differing style */
 .mark {
 	font-weight: 400;
 }
@@ -722,11 +702,10 @@ a#login_pop:hover, a#join_pop:hover {
 .sub-nav2 a:hover {
 	background: #E74C3C;
 }
-
-
-
-
-
+.user-lines:nth-of-type(n):hover > .user-divider:nth-of-type(n){
+	background: #0A5E83 ;
+	cursor: default;
+	}
 
 
 
