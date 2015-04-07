@@ -261,6 +261,7 @@ a#login_pop:hover, a#join_pop:hover {
     visibility: visible;
     opacity: 1;
 }
+.auth.field:first-of-type{margin-top: 15px;}
 .auth.field input:focus {
 	background: #222222;
 }
@@ -633,7 +634,7 @@ a#login_pop:hover, a#join_pop:hover {
 .nav2 li {
 	float: left;
 	position: relative;
-	background: #34495e;
+	background: #444;
 }
 /* круглые края */
 .nav2 > li:first-of-type {
@@ -668,7 +669,7 @@ a#login_pop:hover, a#join_pop:hover {
 	height: 0; 
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
-	border-bottom: 10px solid #34495e;
+	border-bottom: 10px solid #444;
 	position: absolute;
 	margin-top: 5px;
 	left: -9999px;

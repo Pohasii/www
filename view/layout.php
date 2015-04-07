@@ -78,8 +78,6 @@
 <a href="#x" class="overlay" id="login_form"></a>
 <div class="popup">
 	<form method="post" action="/authentication" id="authform" name="authform">
-    <h2>Добро пожаловать гости!</h2>
-    <p>Введите ваш логин и пароль здесь</p>
     <div class="field auth">
         <label for="login">Логин</label>
         <input type="email" id="login" name="email"/>
@@ -98,8 +96,6 @@
 <form method="post" action="/authentication">
 <a href="#x" class="overlay" id="join_form"></a>
 <div class="popup">
-    <h2>Регистрация</h2>
-    <p>Введите здесь детальную информацию о себе</p>
     <div class="field auth">
         <label for="email">Логин (Email)</label>
         <input type="email" id="email" name="email" autofocus="autofocus" placeholder="e-mail@email.com" required />
