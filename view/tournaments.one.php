@@ -17,13 +17,13 @@
 			<input name='idus' type='hidden' value='<?php echo $idus;?>'>
 			<input name='idtur' type='hidden' value='<?php echo $result['id'];?>'>
 			<input name='nic' type='hidden' value='<?php echo $nicgame;?>'>
-			<input name='run' type='submit' value='Участвовать'> <!-- кнопка участия -->
+			<input class="register-button" name='run' type='submit' value='Участвовать'> <!-- кнопка участия -->
 	</form>
 	<? } elseif($result3 == 'party') { // не трож?>
 	<form method='post' action='/tournaments/<?php echo $result['id'];?>' onclick="">
 		<input name='idus' type='hidden' value='<?php echo $idus;?>'>
 		<input name='idtur' type='hidden' value='<?php echo $result['id'];?>'>
-		<input name='run' type='submit' value='Отписаться'> <!-- кнопка отписаться от участия -->
+		<input class="register-button" name='run' type='submit' value='Отписаться'> <!-- кнопка отписаться от участия -->
 	</form>
 	<? } else echo 'для участия Авторизуйтесь, либо вы не ввели логин(в играх) в личном кабинете'; // сообщение (нужно перефразировать правильно) если не зарегистрирован/либо логин не введ в личном кабинете (заместо кнопки выводится) ?>
 	

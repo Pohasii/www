@@ -706,7 +706,20 @@ a#login_pop:hover, a#join_pop:hover {
 	background: #0A5E83 ;
 	cursor: default;
 	}
-
-
+/*register button*/
+.register-button {
+  display: inline-block;
+  box-sizing: border-box;
+  background: rgb(194, 29, 29);
+  color: rgb(239, 191, 174);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 17px;
+}
+.register-button:hover{
+	cursor: pointer;
+	background: rgb(203, 67, 67);
+}
 
 
