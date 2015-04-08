@@ -52,7 +52,8 @@
 	<?php echo $result['demotitle'];//краткое описание?>
 	
 		<div class="">
-			<img src="/img/turn/<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(" width="960px">
+		<?php if ($result['img']=='') { $scr='avatar.png'; } else $scr=$result['img'];?>
+			<img src="/img/<?=$scr?>">
 		</div>
 	</div>
 
