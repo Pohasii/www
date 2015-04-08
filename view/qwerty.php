@@ -1,34 +1,122 @@
 <div class="wrap">
+	<?$messegError=$result2;
+	messegErrors($messegError);?>
 	<div class="admin-form">
+	
+	<?php if($result3=='edit') { ?>
+	
 		<form name=turreg method=post>
 			<div class="admin-block">
-				<label></label>
-				<input type="text" name=""> 
+				<label>Название</label>
+				<input type="text" name="title" value='<? echo $result[0]['title'];?>'> 
 			</div>
 			<div class="admin-block">
-				<label></label>
-				<input type="text" name=""> 
+				<label>Краткое описание</label>
+				<input type="text" name="demotitle" value='<? echo $result[0]['demotitle'];?>'> 
 			</div>
 			<div class="admin-block">
-				<label></label>
-				<select></select>
+				<label>Формат</label>
+		<div class="second-column-block-element">
+		<select name="format" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+			<?
+			$format = call("SELECT * FROM `utilities_tournaments` WHERE `determination`='format'");
+			$i=0;
+			foreach($format as $value) {
+			if($result[0]['format'] == $value['value']){
+			echo "<option value='".$value['value']."' selected>".$value['text']."</option>";
+			} else echo "<option value='".$value['value']."'>".$value['text']."</option>";
+			$i++;
+			}?>
+		</select>
+		</div>	
 			</div>
 			<div class="admin-block">
-				<label></label>
-				<textarea></textarea>
+				<label>полное описание</label>
+				<textarea name='fulltext'><? echo $result[0]['fulltext'];?></textarea>
 			</div>
 			<div class="admin-block">
-				<label></label>
-				<textarea></textarea>
+				<label>Правила</label>
+				<textarea name=specification><? echo $result[0]['specification'];?></textarea>
 			</div>
 			<div class="admin-block">
-				<label></label>
-				<input type="text" name=""> 
+				<label>Дата проведения</label>
+				<input type="date" name="date" value='<? echo $result[0]['date'];?>'> 
 			</div>
 			<div class="admin-block">
-				<label></label>
-				<select></select>
+				<label>статус</label>
+					<div class="second-column-block-element">
+					<select name="status" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+					<?
+					$format = call("SELECT * FROM `utilities_tournaments` WHERE `determination`='status'");
+					$i=0;
+					foreach($format as $value) {
+					if($result[0]['status'] == $value['value']){
+					echo "<option value='".$value['value']."' selected>".$value['text']."</option>";
+					} else echo "<option value='".$value['value']."'>".$value['text']."</option>";
+					$i++;
+					}?>
+					</select>
+					</div>
 			</div>
+			<input type="hidden" name="id" value='<? echo $result[0]['id'];?>'> 
+			
+			<input name="sub" type="submit" value="Обновить">
 		</form>
+		
+	<? } else { ?>
+		<form name=turreg method=post>
+			<div class="admin-block">
+				<label>Название</label>
+				<input type="text" name="title"> 
+			</div>
+			<div class="admin-block">
+				<label>Краткое описание</label>
+				<input type="text" name="demotitle"> 
+			</div>
+			<div class="admin-block">
+				<label>Формат</label>
+		<div class="second-column-block-element">
+		<select name="format" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+		<option value='1x1'>1x1</option>
+		<option value='5x5'>5x5</option>
+		<option value='Dominion'>Dominion</option>
+		</select>
+		</div>	
+			</div>
+			<div class="admin-block">
+				<label>полное описание</label>
+				<textarea name=fulltext></textarea>
+			</div>
+			<div class="admin-block">
+				<label>Правила</label>
+				<textarea name=specification></textarea>
+			</div>
+			<div class="admin-block">
+				<label>Дата проведения</label>
+				<input type="date" name="date"> 
+			</div>
+			<div class="admin-block">
+				<label>статус</label>
+					<div class="second-column-block-element">
+					<select name="status" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+					<option value='Регистрация октрыта'>Регистрация октрыта</option>
+					<option value='Регистрация закрыта'>Регистрация закрыта</option>
+					<option value='Турнир начался'>Турнир начался</option>
+					<option value='Турнир завершен'>Турнир завершен</option>
+					</select>
+			</div>
+			<input name="sub" type="submit" value="Создать турнир">
+		</form>
+		<? } ?>
+		
+		<? foreach($result as $value) { ?>
+			<form name=turreg method=post>
+			<input type="text" name="title" value='<? echo $value['title']?>' readonly>
+			<input type="text" name="id" value='<? echo $value['id']?>' readonly>
+			<input name="sub" type="submit" value="edit">
+			<input name="sub" type="submit" value="delete">
+			</form>
+		<?}?>
+		
 	</div>
 </div>
