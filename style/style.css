@@ -780,4 +780,22 @@ a#login_pop:hover, a#join_pop:hover {
   left: -60px;
   top: 12px;
 }
+.decription-element {
+  display: inline-block;
+}
+.decription-element label, span {
+  display: block;
+  text-align: center;
+}
+.decription-element label {
+  background: #DA6823;
+  padding: 5px;
+}
+.decription-element span {
+  color: /*#33B858*/#299611;
+  border: 1px solid #DA6823;
+  padding: 5px;
+}
+.full-description {
+  margin-top: -18px;
 }
