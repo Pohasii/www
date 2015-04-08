@@ -11,7 +11,7 @@
 		<div class="full-description">
 			<div class="decription-element">
 				<label>Формат</label>
-				<span>1x1<?php echo $value['format'];?></span>
+				<span><?php echo $result['format'];?></span>
 			</div>
 			<div class="decription-element">
 				<label>Приз</label>
@@ -19,11 +19,11 @@
 			</div>
 			<div class="decription-element">
 				<label>Зарегистрировано</label>
-				<span>15</span>
+				<span><?php echo $result['count'].'/'.$result['countFerst'];?></span>
 			</div>
 			<div class="decription-element">
 				<label>Начало</label>
-				<span ><?php echo date_format(date_create($value['date']), 'd.m.y');?></span>
+				<span ><?php echo date_format(date_create($result['date']), 'd.m.y').'/'.$result['time'];?></span>
 			</div>
 		</div>
 		<div class="">

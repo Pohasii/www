@@ -119,7 +119,7 @@
 		
     <div class="second-column-block-element">
 
-		<select name="game[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1">
+		<select name="game[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
 					<?php 
 					$result = call("SELECT * FROM `game`");
 					foreach($result as $value) { 
