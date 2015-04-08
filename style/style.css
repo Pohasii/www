@@ -459,13 +459,13 @@ a#login_pop:hover, a#join_pop:hover {
 
 /* avatar */ 
 
-.imgholder{
+.imgholder{	
 	position:relative;
 	width:120px;
 	height:120px;
 	border-radius:100px;
-	float:left;
 	margin: 0 30px;
+	float: left;
 }
 /* thumbnails style */
 .imgholder img{
@@ -704,6 +704,32 @@ a#login_pop:hover, a#join_pop:hover {
 .sub-nav2 a:hover {
 	background: #E74C3C;
 }
+=========User Info========
+.user-lines {
+	margin-bottom: 2px;
+}
+.user-lines label {
+	display: inline-block;
+	color: rgba(255, 255, 255, 1);
+	font-size: 1em;
+	width: 134px;
+	padding: 5px 10px;
+	color: gray;
+	transition: .2s;
+}
+.user-lines .user-divider{
+	display: inline-block;
+	border: 1px solid #0A5E83;
+	font-size: 1em;
+	color: #fff;
+	padding: 6px 10px;
+	width: 300px;
+	transition: .5s;
+}
+.user-lines:nth-of-type(n):hover > .user-divider:nth-of-type(n){
+	background: #0A5E83 ;
+	cursor: default;
+	}
 .user-lines:nth-of-type(n):hover > .user-divider:nth-of-type(n){
 	background: #0A5E83 ;
 	cursor: default;
@@ -732,4 +758,10 @@ a#login_pop:hover, a#join_pop:hover {
   margin-bottom: 17px;
   color: #DA6823;
 }
-
+.personal-info-block {
+	display: inline-block;
+	  background: rgba(45, 45, 45, 1);
+  padding: 30px;
+  border-radius: 5px;
+  margin-top: -14px;
+}

@@ -6,7 +6,22 @@
 			<h1><?php echo $result['title'];//титле (название)?></h1>
 		</div>
 		<div class="full-description">
-			
+			<div class="decription-element">
+				<label>Формат</label>
+				<span>1х1</span>
+			</div>
+			<div class="decription-element">
+				<label>Приз</label>
+				<span>20М</span>
+			</div>
+			<div class="decription-element">
+				<label>Зарегистрировано</label>
+				<span>15</span>
+			</div>
+			<div class="decription-element">
+				<label>Начало</label>
+				<span>21:30 02.11.2033</span>
+			</div>
 		</div>
 		<div class="">
 			<img src="<?php echo $result['img'];//изображение?>" alt="<?php echo $result['title'];//титле?>">
