@@ -4,6 +4,9 @@
 		<?php messegErrors($messegError);//сообщение об ошибке?>
 		<div class="about-tournament-heading">
 			<h1><?php echo $result['title'];//титле (название)?></h1>
+			<div class="heading-span">
+				<span>Регистрация<?php echo $value['status'];// статус (регистрация/завершон)?></span>
+			</div>
 		</div>
 		<div class="full-description">
 			<div class="decription-element">
@@ -75,7 +78,7 @@
             </div>
         </div>
 		
-		<?php echo date_format(date_create($result['date']), 'd.m.y');?>
+	<!--<?php echo date_format(date_create($result['date']), 'd.m.y');?>-->
 </div>		
 		<script type="text/javascript">/*
 		$("#demoTab").easyResponsiveTabs({

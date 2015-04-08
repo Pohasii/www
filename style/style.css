@@ -796,3 +796,33 @@ a#login_pop:hover, a#join_pop:hover {
 .full-description {
   margin-top: -18px;
 }
+.heading-span {
+	display: inline-block;
+}
+.about-tournament-heading h1 {
+	display: inline-block;
+}
+.heading-span span::before {
+	content: "[";
+	color: #C21D1D;
+}
+.heading-span span::after {
+	content: "]";
+	color: #C21D1D;
+}
+.heading-span span {
+color: white;
+  font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
