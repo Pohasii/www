@@ -12,7 +12,7 @@
 			<?php foreach($result as $value) { ?>
 				<div class="link active" style="background-image:url(<?php echo $value['img']; ?>);">
 					<a href="/tournaments/<?php echo $value['id']; ?>">
-						<span ><img src="/img/<?=$value['game'];?>"></span>
+						<span ><img src="/img/game/<?=$value['game'];?>"></span>
 						<span ><?php echo $value['title'];?></span>
 						<span ><?php echo $value['format'];?></span>
 						<span ><?php echo $value['demotitle'];?></span>
