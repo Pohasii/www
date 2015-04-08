@@ -765,3 +765,15 @@ a#login_pop:hover, a#join_pop:hover {
   border-radius: 5px;
   margin-top: -14px;
 }
+.personal-info-block::before{
+  content: "";
+  width: 0;
+  height: 0;
+  border-bottom: 15px solid transparent;
+  border-top: 15px solid transparent;
+  border-right: 30px solid rgb(45, 45, 45);
+  position: relative;
+  left: -60px;
+  top: 12px;
+}
+}
