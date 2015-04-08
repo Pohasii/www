@@ -27,7 +27,7 @@
 			</div>
 		</div>
 		<div class="">
-			<img src="<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(">
+			<img src="/img/turn/<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(" width="960px">
 		</div>
 		<?php echo $result['demotitle'];//краткое описание?>
 		
