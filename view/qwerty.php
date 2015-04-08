@@ -64,6 +64,7 @@
 		</form>
 		
 	<? } else { ?>
+	<? $format = call("SELECT * FROM `utilities_tournaments`"); ?>
 		<form name=turreg method=post>
 			<div class="admin-block">
 				<label>Название</label>
@@ -77,9 +78,11 @@
 				<label>Формат</label>
 		<div class="second-column-block-element">
 		<select name="format" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
-		<option value='1x1'>1x1</option>
-		<option value='5x5'>5x5</option>
-		<option value='Dominion'>Dominion</option>
+		<? foreach($format as $value) {
+		if($value['determination']=='format'){
+		echo "<option value='".$value['value']."'>".$value['text']."</option>";
+		}
+		}?>
 		</select>
 		</div>	
 			</div>
@@ -99,10 +102,11 @@
 				<label>статус</label>
 					<div class="second-column-block-element">
 					<select name="status" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
-					<option value='Регистрация октрыта'>Регистрация октрыта</option>
-					<option value='Регистрация закрыта'>Регистрация закрыта</option>
-					<option value='Турнир начался'>Турнир начался</option>
-					<option value='Турнир завершен'>Турнир завершен</option>
+					<? foreach($format as $value) {
+					if($value['determination']=='status'){
+					echo "<option value='".$value['value']."'>".$value['text']."</option>";
+					}
+					}?>
 					</select>
 			</div>
 			<input name="sub" type="submit" value="Создать турнир">
