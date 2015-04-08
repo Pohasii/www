@@ -14,6 +14,31 @@
 				<label>Краткое описание</label>
 				<input type="text" name="demotitle" value='<? echo $result[0]['demotitle'];?>'> 
 			</div>
+			
+			<div class="admin-block">
+				<label>Игра</label>
+				
+				<div class="second-column-block-element">
+				<select name="game" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+				<?
+				$format = call("SELECT * FROM `game`");
+				$i=0;
+				foreach($format as $value) {
+				if($result[0]['game'] == $value['game']){
+				echo "<option value='".$value['img']."' ".$value['status'].">".$value['game']."</option>";
+				} else echo "<option value='".$value['img']."' ".$value['status'].">".$value['game']."</option>";
+				$i++;
+				}?>
+				</select>
+				</div>
+				
+			</div>
+			
+			<div class="admin-block">
+				<label>Время</label>
+				<input type="time" name="time" value='<? echo $result[0]['time'];?>'> 
+			</div>
+			
 			<div class="admin-block">
 				<label>Формат</label>
 		<div class="second-column-block-element">
@@ -64,7 +89,6 @@
 		</form>
 		
 	<? } else { ?>
-	<? $format = call("SELECT * FROM `utilities_tournaments`"); ?>
 		<form name=turreg method=post>
 			<div class="admin-block">
 				<label>Название</label>
@@ -74,6 +98,32 @@
 				<label>Краткое описание</label>
 				<input type="text" name="demotitle"> 
 			</div>
+			
+			
+			<div class="admin-block">
+				<label>Игра</label>
+				
+				<div class="second-column-block-element">
+				<select name="game" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+				<?
+				$format = call("SELECT * FROM `game`");
+				$i=0;
+				foreach($format as $value) {
+				echo "<option value='".$value['img']."' ".$value['status'].">".$value['game']."</option>";
+				$i++;
+				}?>
+				</select>
+				</div>
+				
+			</div>
+			
+			<div class="admin-block">
+				<label>Время</label>
+				<input type="time" name="time" value='<? echo $result[0]['time'];?>'> 
+			</div>
+			
+			<? $format = call("SELECT * FROM `utilities_tournaments`"); ?>
+			
 			<div class="admin-block">
 				<label>Формат</label>
 		<div class="second-column-block-element">
