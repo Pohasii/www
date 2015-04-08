@@ -377,6 +377,7 @@ a#login_pop:hover, a#join_pop:hover {
   box-sizing: border-box;
   padding: 4px;
   color: white;
+  border-radius: 5px;
 }
 .field input:focus {
   outline: 0;
@@ -423,7 +424,7 @@ a#login_pop:hover, a#join_pop:hover {
   width: 60px;
 }
 .link span:nth-of-type(7) {
-  width: 100px;
+  width: 108px;
 }
 .link.theader span {
 	background:#5F5F5F;
@@ -798,6 +799,7 @@ a#login_pop:hover, a#join_pop:hover {
 }
 .full-description {
   margin-top: -18px;
+  float: right;
 }
 .heading-span {
 	display: inline-block;
@@ -817,8 +819,15 @@ a#login_pop:hover, a#join_pop:hover {
 color: white;
   font-size: 18px;
 }
-
-
+.description-pic {
+	  width: 531px;
+  border: 1px solid #DA6823;
+  padding: 4px;
+  margin-top: -18px;
+}
+.description-pic img {
+	max-width: 100%;
+}
 
 
 
