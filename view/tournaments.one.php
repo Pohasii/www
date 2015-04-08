@@ -61,6 +61,7 @@
                 <li> Участники </li>
                 <li> Правила </li>
                 <li> Описание </li>
+				<li> сетка </li>
 				</ul> 
 				
             <div class="resp-tabs-container">
@@ -75,6 +76,11 @@
 				<article>
 				<?php echo $result['fulltext']; // полное онписание?>
 				</article>  
+				</div>
+				<div> 
+				
+				<?php echo $result['lane']; // полное онписание?>
+				 
 				</div>
             </div>
         </div>
