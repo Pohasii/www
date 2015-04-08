@@ -5,14 +5,14 @@ if(@$action[0]){
 	$title = $result[0]['title'];
 	
 
-	if(isset($_SESSION["keys"]) and isset($_SESSION["login"])){
+	if(isset($_SESSION["keys"]) and isset($_SESSION["login"]) and $result[0]['status']=='Регистрация'){
 		if($result2==false){
 			$result3='noparty';
 		} else {
 			foreach($result2 as $value){
 				if($value['iduser'] == $_SESSION['id']){
 					$result3='party';
-				} else $result3='noparty';
+				} elseif($result[0]['status']=='Регистрация'){ $result3='noparty';}
 			}
 		}
 	}
