@@ -13,10 +13,10 @@
 		<span><?php echo $value['count'];//количество участвующих?></span>
 		<span><?php echo $value['status'];// статус (регистрация/завершон)?></span>
 	</div>
-	<? 
-
+	<?
 	$idus=$_SESSION['id'];// не трож
 	$nicgame=$_SESSION['nicgame'];// не трож
+
 	if($result3 == 'noparty' and $nicgame != '') {// форма участия ?>
 	<form method='post' action='/tournaments/<?php echo $result['id'];?>'>
 			<input name='idus' type='hidden' value='<?php echo $idus;?>'>

@@ -4,6 +4,7 @@ if(@$action[0]){
 	$result2 = call("SELECT * FROM `participants` WHERE `idtur`='$action[0]'");
 	$title = $result[0]['title'];
 	
+
 	if(isset($_SESSION["keys"]) and isset($_SESSION["login"])){
 		if($result2==false){
 			$result3='noparty';

@@ -17,6 +17,13 @@
 		<label class="user-label">Ник</label>
 		<div class="user-divider"><?php echo $result['nicgame']; ?></div>
 	</div>
+	
+	<div class="user-lines">
+		<label class="user-label">Индификатор</label>
+	
+	<div class="user-divider"><?=$result['id'];?></div>
+	</div>
+	
 	<div class="user-lines">
 		<label class="user-label">Дата регистрации</label>
 		<div class="user-divider"><?php echo $result['dreg'];?></div>

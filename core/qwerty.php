@@ -17,7 +17,9 @@ if ($result[0]['special']!=1) {
 			$id=$_POST['id'];
 			$title=$_POST['title'];
 			$res = put("DELETE FROM `tournaments` WHERE `id`='$id' and `title`='$title'");
-			if ($res){$messegError['codeError'] = 22; $messegError['relode'] = true; 
+			if ($res){
+			$messegError['codeError'] = 22; $messegError['relode'] = true;
+			put("DELETE FROM `participants` WHERE `idtur`='$id'");
 			} else {$messegError['codeError'] = 23; $messegError['relode'] = false;}
 		}
 		

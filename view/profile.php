@@ -27,7 +27,7 @@
 $messegError=$result2;
 messegErrors($messegError);
 ?>
-                <h1>Личный кабинет</h1>
+                <h1>Личный кабинет :Ваш индификатор <?=$result['id'];?></h1>
 		<?php if ($result['img']=='') { $scr='avatar.png'; } else $scr=$result['img'];?>
 			<img src="/img/<?=$scr?>">
 	<div class="first-form">
