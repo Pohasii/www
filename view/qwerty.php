@@ -8,11 +8,11 @@
 		<form name=turreg method=post>
 			<div class="admin-block">
 				<label>Название</label>
-				<input type="text" name="title" value='<? echo $result['title'];?>'> 
+				<input type="text" name="title" value='<? echo $result[0]['title'];?>'> 
 			</div>
 			<div class="admin-block">
 				<label>Краткое описание</label>
-				<input type="text" name="demotitle" value='<? echo $result['demotitle'];?>'> 
+				<input type="text" name="demotitle" value='<? echo $result[0]['demotitle'];?>'> 
 			</div>
 			<div class="admin-block">
 				<label>Формат</label>
@@ -22,7 +22,7 @@
 			$format = call("SELECT * FROM `utilities_tournaments` WHERE `determination`='format'");
 			$i=0;
 			foreach($format as $value) {
-			if($result['format'] == $value['value']){
+			if($result[0]['format'] == $value['value']){
 			echo "<option value='".$value['value']."' selected>".$value['text']."</option>";
 			} else echo "<option value='".$value['value']."'>".$value['text']."</option>";
 			$i++;
@@ -32,15 +32,15 @@
 			</div>
 			<div class="admin-block">
 				<label>полное описание</label>
-				<textarea name='fulltext'><? echo $result['fulltext'];?></textarea>
+				<textarea name='fulltext'><? echo $result[0]['fulltext'];?></textarea>
 			</div>
 			<div class="admin-block">
 				<label>Правила</label>
-				<textarea name=specification><? echo $result['specification'];?></textarea>
+				<textarea name=specification><? echo $result[0]['specification'];?></textarea>
 			</div>
 			<div class="admin-block">
 				<label>Дата проведения</label>
-				<input type="date" name="date" value='<? echo $result['date'];?>'> 
+				<input type="date" name="date" value='<? echo $result[0]['date'];?>'> 
 			</div>
 			<div class="admin-block">
 				<label>статус</label>
@@ -50,7 +50,7 @@
 					$format = call("SELECT * FROM `utilities_tournaments` WHERE `determination`='status'");
 					$i=0;
 					foreach($format as $value) {
-					if($result['status'] == $value['value']){
+					if($result[0]['status'] == $value['value']){
 					echo "<option value='".$value['value']."' selected>".$value['text']."</option>";
 					} else echo "<option value='".$value['value']."'>".$value['text']."</option>";
 					$i++;
@@ -58,7 +58,7 @@
 					</select>
 					</div>
 			</div>
-			<input type="hidden" name="id" value='<? echo $result['id'];?>'> 
+			<input type="hidden" name="id" value='<? echo $result[0]['id'];?>'> 
 			
 			<input name="sub" type="submit" value="Обновить">
 		</form>
