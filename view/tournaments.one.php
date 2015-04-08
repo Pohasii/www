@@ -1,13 +1,16 @@
 
 <div class="wrap">
-	<?php messegErrors($messegError);//сообщение об ошибке?>
-	<img src="<?php echo $result['img'];//изображение?>" alt="<?php echo $result['title'];//титле?>">
-	<h1><?php echo $result['title'];//титле (название)?></h1>
-	<?php echo $result['demotitle'];//краткое описание?>
-	
-	<span><?php echo $value['count'];//количество участвующих?></span>
-	<span><?php echo $value['status'];// статус (регистрация/завершон)?></span>
-	
+	<div class="about-tournament">
+		<?php messegErrors($messegError);//сообщение об ошибке?>
+		<h1><?php echo $result['title'];//титле (название)?></h1>
+		<div class="">
+			<img src="<?php echo $result['img'];//изображение?>" alt="<?php echo $result['title'];//титле?>">
+		</div>
+		<?php echo $result['demotitle'];//краткое описание?>
+		
+		<span><?php echo $value['count'];//количество участвующих?></span>
+		<span><?php echo $value['status'];// статус (регистрация/завершон)?></span>
+	</div>
 	<? 
 
 	$idus=$_SESSION['id'];// не трож
