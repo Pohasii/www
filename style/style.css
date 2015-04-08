@@ -233,7 +233,8 @@ margin-top: 22px;
     margin-right: 10px;
     padding: 9px 10px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 14px;
+    border-radius: 5px;
 }
 a#login_pop:hover, a#join_pop:hover {
     background: #212121;
