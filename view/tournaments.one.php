@@ -8,7 +8,7 @@
 		<div class="full-description">
 			<div class="decription-element">
 				<label>Формат</label>
-				<span>1х1</span>
+				<span>1x1<?php echo $value['format'];?></span>
 			</div>
 			<div class="decription-element">
 				<label>Приз</label>
@@ -20,7 +20,7 @@
 			</div>
 			<div class="decription-element">
 				<label>Начало</label>
-				<span>21:30 02.11.2033</span>
+				<span ><?php echo date_format(date_create($value['date']), 'd.m.y');?></span>
 			</div>
 		</div>
 		<div class="">
