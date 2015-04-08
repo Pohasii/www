@@ -5,7 +5,7 @@
 		<div class="about-tournament-heading">
 			<h1><?php echo $result['title'];//титле (название)?></h1>
 			<div class="heading-span">
-				<span>Регистрация<?php echo $value['status'];// статус (регистрация/завершон)?></span>
+				<span><?php echo $result['status'];// статус (регистрация/завершон)?></span>
 			</div>
 		</div>
 		<div class="full-description">
@@ -27,7 +27,7 @@
 			</div>
 		</div>
 		<div class="">
-			<img src="<?php echo $result['img'];//изображение?>" alt="<?php echo $result['title'];//титле?>">
+			<img src="<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(">
 		</div>
 		<?php echo $result['demotitle'];//краткое описание?>
 		
