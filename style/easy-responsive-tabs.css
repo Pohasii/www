@@ -14,14 +14,7 @@ ul.resp-tabs-list {
     cursor: pointer;
     float: left;
 }
-
-
-
-
-
-
-
-resp-tabs-container {
+.resp-tabs-container {
     padding: 0px;
     background-color: #444;
     clear: left;
