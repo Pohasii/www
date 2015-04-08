@@ -33,12 +33,13 @@ if ($result[0]['special']!=1) {
 			
 			$time=$_POST['time'];
 			$game=$_POST['game'];
+			$countFerst=$_POST['countFerst'];
 			
 			$specification=$_POST['specification'];
 			$date=$_POST['date'];
 			$status=$_POST['status'];
 			
-			$res = put("UPDATE `tournaments` SET `title`='$title',`demotitle`='$demotitle',`format`='$format',`fulltext`='$fulltext',`specification`='$specification',`date`='$date', `time`='$time', `game`='$game',`status`='$status' WHERE `id`='$id'");
+			$res = put("UPDATE `tournaments` SET `title`='$title',`demotitle`='$demotitle',`format`='$format',`fulltext`='$fulltext',`specification`='$specification',`date`='$date', `time`='$time', `game`='$game',`status`='$status', `countFerst`='$countFerst' WHERE `id`='$id'");
 			if ($res){$messegError['codeError'] = 24; $messegError['relode'] = true; 
 			} else {$messegError['codeError'] = 25; $messegError['relode'] = false;}
 		}
@@ -52,12 +53,13 @@ if ($result[0]['special']!=1) {
 			
 			$time=$_POST['time'];
 			$game=$_POST['game'];
+			$countFerst=$_POST['countFerst'];
 			
 			$specification=$_POST['specification'];
 			$date=$_POST['date'];
 			$status=$_POST['status'];
 			
-			$res = put("INSERT INTO `tournaments`(`title`, `demotitle`, `format`, `fulltext`, `specification`,`date`, `time`, `game`, `status`) VALUES ('$title', '$demotitle', '$format', '$fulltext', '$specification', '$date', '$time', '$game', '$status')");
+			$res = put("INSERT INTO `tournaments`(`title`, `demotitle`, `format`, `fulltext`, `specification`,`date`, `time`, `game`, `status`, `countFerst`) VALUES ('$title', '$demotitle', '$format', '$fulltext', '$specification', '$date', '$time', '$game', '$status', '$countFerst')");
 			if ($res){$messegError['codeError'] = 20; $messegError['relode'] = false; 
 			} else {$messegError['codeError'] = 21; $messegError['relode'] = false;}
 		}

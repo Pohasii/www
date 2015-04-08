@@ -55,6 +55,12 @@
 		</select>
 		</div>	
 			</div>
+			
+			<div class="admin-block">
+				<label>Необходимое количество</label>
+				<input type="number" max="100" name="countFerst" value='<? echo $result[0]['countFerst'];?>'>
+			</div>
+			
 			<div class="admin-block">
 				<label>полное описание</label>
 				<textarea name='fulltext'><? echo $result[0]['fulltext'];?></textarea>
@@ -119,7 +125,7 @@
 			
 			<div class="admin-block">
 				<label>Время</label>
-				<input type="time" name="time" value='<? echo $result[0]['time'];?>'> 
+				<input type="time" name="time"> 
 			</div>
 			
 			<? $format = call("SELECT * FROM `utilities_tournaments`"); ?>
@@ -136,6 +142,12 @@
 		</select>
 		</div>	
 			</div>
+			
+			<div class="admin-block">
+				<label>Необходимое количество</label>
+				<input type="number" max="100" name="countFerst">
+			</div>
+			
 			<div class="admin-block">
 				<label>полное описание</label>
 				<textarea name=fulltext></textarea>
