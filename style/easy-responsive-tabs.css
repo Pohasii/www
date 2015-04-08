@@ -65,12 +65,12 @@ h2.resp-accordion {
 	text-decoration: none;
 	color: white;
 	border-radius: 5px;
-	border: 1px solid orange;
+	border: 1px solid #DA6823;
 	padding: 3px;
 
 }
 .resp-tab-content  a:hover {
-	background: orange;
+	background: #DA6823;
 	transform: scaleX(1.18) scaleY(1.18);
 	transition: .3s;
 }

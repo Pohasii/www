@@ -2,7 +2,9 @@
 <div class="wrap">
 	<div class="about-tournament">
 		<?php messegErrors($messegError);//сообщение об ошибке?>
-		<h1><?php echo $result['title'];//титле (название)?></h1>
+		<div class="about-tournament-heading">
+			<h1><?php echo $result['title'];//титле (название)?></h1>
+		</div>
 		<div class="">
 			<img src="<?php echo $result['img'];//изображение?>" alt="<?php echo $result['title'];//титле?>">
 		</div>

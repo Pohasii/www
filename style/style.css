@@ -722,5 +722,13 @@ a#login_pop:hover, a#join_pop:hover {
 	cursor: pointer;
 	background: rgb(203, 67, 67);
 }
-
+/*tournament one*/
+.about-tournament-heading {
+  text-align: center;
+  font-size: 25px;
+  border-bottom: 1px solid #DA6823;
+  padding: 8px 0;
+  margin-bottom: 17px;
+  color: #DA6823;
+}
 
