@@ -69,7 +69,9 @@
 	</div>
 </div>
 <footer class="foot">
-	<span>WTW Digital</span>
+	<div class="wrap">
+		<span>WTW Digital</span>
+	</div>
 </footer>
 </body>
 

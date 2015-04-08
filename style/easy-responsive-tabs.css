@@ -15,7 +15,13 @@ ul.resp-tabs-list {
     float: left;
 }
 
-.resp-tabs-container {
+
+
+
+
+
+
+resp-tabs-container {
     padding: 0px;
     background-color: #444;
     clear: left;
@@ -54,7 +60,16 @@ h2.resp-accordion {
 .resp-tab-content {
     border: 1px solid #c1c1c1;
 }
-
+.resp-tab-content  a{
+	text-decoration: none;
+	color: white;
+	border-radius: 5px;
+	border: 1px solid orange;
+	padding: 3px;
+}
+.resp-tab-content  a:hover {
+	background: orange;
+}
 h2.resp-accordion {
     font-size: 13px;
     border: 1px solid #c1c1c1;
