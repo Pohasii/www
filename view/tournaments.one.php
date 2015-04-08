@@ -26,15 +26,9 @@
 				<span ><?php echo date_format(date_create($result['date']), 'd.m.y').'/'.$result['time'];?></span>
 			</div>
 		</div>
-		<div class="">
-			<img src="<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(">
-		</div>
-		<?php echo $result['demotitle'];//краткое описание?>
 		
-		<span><?php echo $value['count'];//количество участвующих?></span>
-		<span><?php echo $value['status'];// статус (регистрация/завершон)?></span>
-	</div>
-	<?
+		
+		<?
 	$idus=$_SESSION['id'];// не трож
 	$nicgame=$_SESSION['nicgame'];// не трож
 
@@ -54,6 +48,13 @@
 	<? } else echo 'для участия Авторизуйтесь, либо вы не ввели логин(в играх) в личном кабинете'; // сообщение (нужно перефразировать правильно) если не зарегистрирован/либо логин не введ в личном кабинете (заместо кнопки выводится) ?>
 	
 	<?php echo $result['participants'];// я еще не придумал?>
+		
+	<?php echo $result['demotitle'];//краткое описание?>
+	
+		<div class="">
+			<img src="/img/turn/<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(" width="960px">
+		</div>
+	</div>
 
 	<div id="demoTab" style="font-size: 16px; color:#F00;">
             <ul class="resp-tabs-list">
