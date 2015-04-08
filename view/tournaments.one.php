@@ -26,6 +26,9 @@
 				<span ><?php echo date_format(date_create($result['date']), 'd.m.y').'/'.$result['time'];?></span>
 			</div>
 		</div>
+		<div class="description-pic">
+			<img src="/img/turn/<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(" width="960px">
+		</div>
 		
 		
 		<?
@@ -51,9 +54,6 @@
 		
 	<?php echo $result['demotitle'];//краткое описание?>
 	
-		<div class="">
-			<img src="/img/turn/<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(" width="960px">
-		</div>
 	</div>
 
 	<div id="demoTab" style="font-size: 16px; color:#F00;">

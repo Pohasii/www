@@ -819,8 +819,15 @@ a#login_pop:hover, a#join_pop:hover {
 color: white;
   font-size: 18px;
 }
-
-
+.description-pic {
+	  width: 531px;
+  border: 1px solid #DA6823;
+  padding: 4px;
+  margin-top: -18px;
+}
+.description-pic img {
+	max-width: 100%;
+}
 
 
 
