@@ -754,12 +754,13 @@ a#login_pop:hover, a#join_pop:hover {
 	cursor: pointer;
 	background: rgb(203, 67, 67);
 }
-.register {
+/* .register {
   background: #444;
   width: 100%;
   text-align: center;
   padding: 30px 0;
-}
+  float: right;
+} */
 /*tournament one*/
 .about-tournament-heading {
   text-align: center;

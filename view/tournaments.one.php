@@ -40,33 +40,31 @@
 		<div id="vk_poll"></div>
 			<script type="text/javascript">
 			VK.Widgets.Poll("vk_poll", {width: "300"}, "178299448_010b170d8fb1048e07");
-			</script>
-		<div class="register">
-		<?
-		$idus=$_SESSION['id'];// не трож
-		$nicgame=$_SESSION['nicgame'];// не трож
-		if($result3 == 'noparty' and $nicgame != '') {// форма участия ?>
-		<form method='post' action='/tournaments/<?php echo $result['id'];?>'>
-				<input name='idus' type='hidden' value='<?php echo $idus;?>'>
-				<input name='idtur' type='hidden' value='<?php echo $result['id'];?>'>
-				<input name='nic' type='hidden' value='<?php echo $nicgame;?>'>
-				<input class="register-button" name='run' type='submit' value='Участвовать'> <!-- кнопка участия -->
-		</form>
-		<? } elseif($result3 == 'party') { // не трож?>
-		<form method='post' action='/tournaments/<?php echo $result['id'];?>' onclick="">
-			<input name='idus' type='hidden' value='<?php echo $idus;?>'>
-			<input name='idtur' type='hidden' value='<?php echo $result['id'];?>'>
-			<input class="register-button" name='run' type='submit' value='Отписаться'> <!-- кнопка отписаться от участия -->
-		</form>
-		<? } else echo '<div class="register-button">Авторизуйтесь/введите логин(в играх) в личном кабинете/турнир завершен</div>'; // сообщение (нужно перефразировать правильно) если не зарегистрирован/либо логин не введ в личном кабинете (заместо кнопки выводится) ?>
-		</div>			
+			</script>	
 		</div>
 		<div class="description-pic">
 			<img src="/img/turn/<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(" width="960px">
 		</div>
 		
 		
+		<?
+	$idus=$_SESSION['id'];// не трож
+	$nicgame=$_SESSION['nicgame'];// не трож
 
+	if($result3 == 'noparty' and $nicgame != '') {// форма участия ?>
+	<form method='post' action='/tournaments/<?php echo $result['id'];?>'>
+			<input name='idus' type='hidden' value='<?php echo $idus;?>'>
+			<input name='idtur' type='hidden' value='<?php echo $result['id'];?>'>
+			<input name='nic' type='hidden' value='<?php echo $nicgame;?>'>
+			<input class="register-button" name='run' type='submit' value='Участвовать'> <!-- кнопка участия -->
+	</form>
+	<? } elseif($result3 == 'party') { // не трож?>
+	<form method='post' action='/tournaments/<?php echo $result['id'];?>' onclick="">
+		<input name='idus' type='hidden' value='<?php echo $idus;?>'>
+		<input name='idtur' type='hidden' value='<?php echo $result['id'];?>'>
+		<input class="register-button" name='run' type='submit' value='Отписаться'> <!-- кнопка отписаться от участия -->
+	</form>
+	<? } else echo '<div class="register-button">Авторизуйтесь/введите логин(в играх) в личном кабинете/турнир завершен</div>'; // сообщение (нужно перефразировать правильно) если не зарегистрирован/либо логин не введ в личном кабинете (заместо кнопки выводится) ?>
 	<?php echo $result['participants'];// я еще не придумал?>
 		
 	<?php echo $result['demotitle'];//краткое описание?>
