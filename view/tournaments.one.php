@@ -14,10 +14,12 @@
 			</script>
 				<span><?php echo $result['status'];// статус (регистрация/завершон)?></span>
 			</div>
-			
-			
-			
 		</div>
+		
+		<div class="description-pic">
+			<img src="/img/turn/<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(" width="960px">
+		</div>
+		
 		<div class="full-description">
 			<div class="description-element">
 				<label>Формат</label>
@@ -43,9 +45,6 @@
 				VK.Widgets.Poll("vk_poll", {width: "300"}, "178299448_010b170d8fb1048e07");
 				</script>
 			</div>
-		</div>
-		<div class="description-pic">
-			<img src="/img/turn/<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(" width="960px">
 		</div>
 		
 		
