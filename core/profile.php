@@ -35,31 +35,24 @@ if (@$action[0]=='') {
 		}
 		
 		if($_POST['avabut']) {
-			
-			print_r($_FILES);
-			
+
 			$email = $_SESSION['login'];
 			$id = $_SESSION['id'];
-			
-			//print_r($_FILES['ava']['size']);
-		if($_FILES['userfile']['type'] != "image/gif" and $_FILES['userfile']['type'] != "image/jpg" and $_FILES['userfile']['type'] != "image/png") {
-			$messegError['codeError'] = 31; $messegError['relode'] = false;
-		} else {
-				if($_FILES['ava']['size']>10){
-					if($_FILES['ava']['size']<=2097152) {
-						$rename = explode(".",$_FILES['ava']['name']);
-						unset($rename[0]);
-						$file=$id.'.'.$rename[1];
-						$uploaddir = $_SERVER["DOCUMENT_ROOT"].'/img/user/'.$file;
-						
-						if(move_uploaded_file($_FILES['ava']['tmp_name'], $uploaddir)){
-							$res = put("UPDATE `user` SET `ava`='$file' WHERE `email`='$email'");
-							if($res) {$messegError['codeError'] = 26; $messegError['relode'] = true; 
-							} else $messegError['codeError'] = 27; $messegError['relode'] = false; 
-						} else $messegError['codeError'] = 28; $messegError['relode'] = false; 
-					} else $messegError['codeError'] = 29; $messegError['relode'] = false; 	
-				} else $messegError['codeError'] = 30; $messegError['relode'] = false; 
-			}
+				
+			if($_FILES['ava']['size']>10){
+				if($_FILES['ava']['size']<=2097152) {
+					$rename = explode(".",$_FILES['ava']['name']);
+					unset($rename[0]);
+					$file=$id.'.'.$rename[1];
+					$uploaddir = $_SERVER["DOCUMENT_ROOT"].'/img/user/'.$file;
+					
+					if(move_uploaded_file($_FILES['ava']['tmp_name'], $uploaddir)){
+						$res = put("UPDATE `user` SET `ava`='$file' WHERE `email`='$email'");
+						if($res) {$messegError['codeError'] = 26; $messegError['relode'] = true; 
+						} else $messegError['codeError'] = 27; $messegError['relode'] = false; 
+					} else $messegError['codeError'] = 28; $messegError['relode'] = false; 
+				} else $messegError['codeError'] = 29; $messegError['relode'] = false; 	
+			} else $messegError['codeError'] = 30; $messegError['relode'] = false; 
 		}
 		
 		if($_POST['saveinf']) {
