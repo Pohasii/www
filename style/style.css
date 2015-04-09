@@ -748,10 +748,17 @@ a#login_pop:hover, a#join_pop:hover {
   outline: none;
   padding: 10px 20px;
   font-size: 17px;
+  border-radius: 3px;
 }
 .register-button:hover{
 	cursor: pointer;
 	background: rgb(203, 67, 67);
+}
+.register {
+  background: #444;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
 }
 /*tournament one*/
 .about-tournament-heading {
