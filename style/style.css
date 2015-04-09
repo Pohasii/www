@@ -742,8 +742,8 @@ a#login_pop:hover, a#join_pop:hover {
 .register-button {
   display: inline-block;
   box-sizing: border-box;
-  background: rgb(194, 29, 29);
-  color: rgb(239, 191, 174);
+  background: #D82828;
+  color: rgb(255, 253, 252);
   border: none;
   outline: none;
   padding: 10px 20px;
