@@ -19,28 +19,30 @@
 			
 		</div>
 		<div class="full-description">
-			<div class="decription-element">
+			<div class="description-element">
 				<label>Формат</label>
 				<span><?php echo $result['format'];?></span>
 			</div>
-			<div class="decription-element">
+			<div class="description-element">
 				<label>Приз</label>
 				<span>20М</span>
 			</div>
-			<div class="decription-element">
+			<div class="description-element">
 				<label>Зарегистрировано</label>
 				<span><?php echo $result['count'].'/'.$result['countFerst'];?></span>
 			</div>
-			<div class="decription-element">
+			<div class="description-element">
 				<label>Начало</label>
 				<span ><?php echo date_format(date_create($result['date']), 'd.m.y').'/'.$result['time'];?></span>
 			</div>
 			
 			<!-- Put this div tag to the place, where the Poll block will be -->
-		<div id="vk_poll"></div>
-			<script type="text/javascript">
-			VK.Widgets.Poll("vk_poll", {width: "300"}, "178299448_010b170d8fb1048e07");
-			</script>	
+			<div class="vkpoll">
+				<div id="vk_poll"></div>
+				<script type="text/javascript">
+				VK.Widgets.Poll("vk_poll", {width: "300"}, "178299448_010b170d8fb1048e07");
+				</script>
+			</div>
 		</div>
 		<div class="description-pic">
 			<img src="/img/turn/<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(" width="960px">
@@ -65,6 +67,7 @@
 		<input class="register-button" name='run' type='submit' value='Отписаться'> <!-- кнопка отписаться от участия -->
 	</form>
 	<? } else echo '<div class="register-button">Авторизуйтесь/введите логин(в играх) в личном кабинете/турнир завершен</div>'; // сообщение (нужно перефразировать правильно) если не зарегистрирован/либо логин не введ в личном кабинете (заместо кнопки выводится) ?>
+	
 	<?php echo $result['participants'];// я еще не придумал?>
 		
 	<?php echo $result['demotitle'];//краткое описание?>

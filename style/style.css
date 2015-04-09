@@ -749,6 +749,7 @@ a#login_pop:hover, a#join_pop:hover {
   padding: 10px 20px;
   font-size: 17px;
   border-radius: 3px;
+  margin-top: 10px;
 }
 .register-button:hover{
 	cursor: pointer;
@@ -788,21 +789,23 @@ a#login_pop:hover, a#join_pop:hover {
   left: -60px;
   top: 12px;
 }
-.decription-element {
+.description-element {
   display: inline-block;
 }
-.decription-element label, span {
+.description-element label, span {
   display: block;
   text-align: center;
 }
-.decription-element label {
+.description-element label {
   background: #DA6823;
   padding: 5px;
+    font-size: 13px;
 }
-.decription-element span {
+.description-element span {
   color: /*#33B858*/#299611;
   border: 1px solid #DA6823;
   padding: 5px;
+  border-radius: 0 0 5px 5px;
 }
 .full-description {
   margin-top: -18px;
@@ -827,10 +830,12 @@ color: white;
   font-size: 18px;
 }
 .description-pic {
+  display: inline-block;
 	  width: 531px;
   border: 1px solid #DA6823;
   padding: 4px;
   margin-top: -18px;
+    border-radius: 0 0 5px 5px;
 }
 .description-pic img {
 	max-width: 100%;
