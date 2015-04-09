@@ -14,6 +14,8 @@
 	<script src="/view/easyResponsiveTabs.js" type="text/javascript"></script>
 	<link href="/view/chosen.css" rel="stylesheet">
 	
+	<script src="//vk.com/js/api/openapi.js" type="text/javascript" charset="windows-1251"></script>
+	
 	<link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 	
@@ -21,6 +23,18 @@
 </head>
 
 <body>
+
+<script src="//vk.com/js/api/openapi.js" type="text/javascript"></script>
+<script type="text/javascript">
+  VK.init({
+    apiId: 4868693,
+    onlyWidgets: true
+  });
+</script>
+
+
+
+
 <header>
 	<!--<div class=line> </div>-->
     <div class="panel">

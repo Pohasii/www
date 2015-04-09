@@ -90,8 +90,12 @@
 				</div>
             </div>
         </div>
-		
-	<!--<?php echo date_format(date_create($result['date']), 'd.m.y');?>-->
+
+<!-- Put this div tag to the place, where the Comments block will be -->
+<div id="vk_comments"></div>
+<script type="text/javascript">
+VK.Widgets.Comments("vk_comments", {limit: 20, width: "960", attach: "*"});
+</script>
 </div>		
 		<script type="text/javascript">/*
 		$("#demoTab").easyResponsiveTabs({
