@@ -6,16 +6,16 @@
 	<?php if($result3=='edit') { ?>
 	
 		<form name=turreg method=post>
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Название</label>
 				<input type="text" name="title" value='<? echo $result[0]['title'];?>'> 
 			</div>
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Краткое описание</label>
 				<input type="text" name="demotitle" value='<? echo $result[0]['demotitle'];?>'> 
 			</div>
 			
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Игра</label>
 				
 				<div class="second-column-block-element">
@@ -34,12 +34,12 @@
 				
 			</div>
 			
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Время</label>
 				<input type="time" name="time" value='<? echo $result[0]['time'];?>'> 
 			</div>
 			
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Формат</label>
 		<div class="second-column-block-element">
 		<select name="format" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
@@ -56,24 +56,24 @@
 		</div>	
 			</div>
 			
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Необходимое количество</label>
 				<input type="number" max="100" name="countFerst" value='<? echo $result[0]['countFerst'];?>'>
 			</div>
 			
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>полное описание</label>
 				<textarea name='fulltext'><? echo $result[0]['fulltext'];?></textarea>
 			</div>
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Правила</label>
 				<textarea name=specification><? echo $result[0]['specification'];?></textarea>
 			</div>
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Дата проведения</label>
 				<input type="date" name="date" value='<? echo $result[0]['date'];?>'> 
 			</div>
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>статус</label>
 					<div class="second-column-block-element">
 					<select name="status" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
@@ -96,17 +96,17 @@
 		
 	<? } else { ?>
 		<form name=turreg method=post>
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Название</label>
 				<input type="text" name="title"> 
 			</div>
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Краткое описание</label>
 				<input type="text" name="demotitle"> 
 			</div>
 			
 			
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Игра</label>
 				
 				<div class="second-column-block-element">
@@ -123,14 +123,14 @@
 				
 			</div>
 			
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Время</label>
 				<input type="time" name="time"> 
 			</div>
 			
 			<? $format = call("SELECT * FROM `utilities_tournaments`"); ?>
 			
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Формат</label>
 		<div class="second-column-block-element">
 		<select name="format" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
@@ -143,24 +143,24 @@
 		</div>	
 			</div>
 			
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Необходимое количество</label>
 				<input type="number" max="100" name="countFerst">
 			</div>
 			
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>полное описание</label>
 				<textarea name=fulltext></textarea>
 			</div>
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Правила</label>
 				<textarea name=specification></textarea>
 			</div>
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>Дата проведения</label>
 				<input type="date" name="date"> 
 			</div>
-			<div class="admin-block">
+			<div class="admin-block field">
 				<label>статус</label>
 					<div class="second-column-block-element">
 					<select name="status" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">

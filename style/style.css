@@ -709,16 +709,17 @@ a#login_pop:hover, a#join_pop:hover {
 .sub-nav2 a:hover {
 	background: #E74C3C;
 }
-=========User Info========
+/*user info*/
 .user-lines {
-	margin-bottom: 2px;
+	margin-bottom: 7px;
 }
 .user-lines label {
 	display: inline-block;
 	color: rgba(255, 255, 255, 1);
 	font-size: 1em;
 	width: 134px;
-	padding: 5px 10px;
+	border-bottom: 1px solid rgba(10, 94, 131, 0.49);
+	padding: 1px 10px;
 	color: gray;
 	transition: .2s;
 }
@@ -730,15 +731,13 @@ a#login_pop:hover, a#join_pop:hover {
 	padding: 6px 10px;
 	width: 300px;
 	transition: .5s;
+	margin-left: -5px;
+	  border-radius: 3px;
 }
 .user-lines:nth-of-type(n):hover > .user-divider:nth-of-type(n){
 	background: #0A5E83 ;
 	cursor: default;
-	}
-.user-lines:nth-of-type(n):hover > .user-divider:nth-of-type(n){
-	background: #0A5E83 ;
-	cursor: default;
-	}
+}
 /*register button*/
 .register-button {
   display: inline-block;
@@ -827,6 +826,10 @@ color: white;
 }
 .description-pic img {
 	max-width: 100%;
+}
+/*admin*/
+.admin-form {
+	float: left;
 }
 
 
