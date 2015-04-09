@@ -71,12 +71,6 @@
 		
 	<?php echo $result['demotitle'];//краткое описание?>
 	
-
-		<div class="">
-		<?php if ($result['img']=='') { $scr='avatar.png'; } else $scr=$result['img'];?>
-			<img src="/img/<?=$scr?>">
-		</div>
-
 	</div>
 
 	<div id="demoTab" style="font-size: 16px; color:#F00;">
