@@ -8,18 +8,18 @@
 		<form name=turreg method=post>
 			<div class="admin-block field">
 				<label>Название</label>
-				<input type="text" name="title" value='<? echo $result[0]['title'];?>'> 
+				<input type="text" name="title" value='<? echo $result[0]['title'];?>' required> 
 			</div>
 			<div class="admin-block field">
 				<label>Краткое описание</label>
-				<input type="text" name="demotitle" value='<? echo $result[0]['demotitle'];?>'> 
+				<input type="text" name="demotitle" value='<? echo $result[0]['demotitle'];?>' required> 
 			</div>
 			
 			<div class="admin-block field">
 				<label>Игра</label>
 				
 				<div class="second-column-block-element">
-				<select name="game" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+				<select name="game" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1" required>
 				<?
 				$format = call("SELECT * FROM `game`");
 				$i=0;
@@ -36,13 +36,13 @@
 			
 			<div class="admin-block field">
 				<label>Время</label>
-				<input type="time" name="time" value='<? echo $result[0]['time'];?>'> 
+				<input type="time" name="time" value='<? echo $result[0]['time'];?>' required> 
 			</div>
 			
 			<div class="admin-block field">
 				<label>Формат</label>
 		<div class="second-column-block-element">
-		<select name="format" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+		<select name="format" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1" required>
 			<?
 			$format = call("SELECT * FROM `utilities_tournaments` WHERE `determination`='format'");
 			$i=0;
@@ -58,25 +58,25 @@
 			
 			<div class="admin-block field">
 				<label>Необходимое количество</label>
-				<input type="number" max="100" name="countFerst" value='<? echo $result[0]['countFerst'];?>'>
+				<input type="number" max="100" name="countFerst" value='<? echo $result[0]['countFerst'];?>' required>
 			</div>
 			
 			<div class="admin-block field">
 				<label>полное описание</label>
-				<textarea name='fulltext'><? echo $result[0]['fulltext'];?></textarea>
+				<textarea name='fulltext' required><? echo $result[0]['fulltext'];?></textarea>
 			</div>
 			<div class="admin-block field">
 				<label>Правила</label>
-				<textarea name=specification><? echo $result[0]['specification'];?></textarea>
+				<textarea name='specification' required><? echo $result[0]['specification'];?></textarea>
 			</div>
 			<div class="admin-block field">
 				<label>Дата проведения</label>
-				<input type="date" name="date" value='<? echo $result[0]['date'];?>'> 
+				<input type="date" name="date" value='<? echo $result[0]['date'];?>' required> 
 			</div>
 			<div class="admin-block field">
 				<label>статус</label>
 					<div class="second-column-block-element">
-					<select name="status" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+					<select name="status" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1" required>
 					<?
 					$format = call("SELECT * FROM `utilities_tournaments` WHERE `determination`='status'");
 					$i=0;
@@ -98,11 +98,11 @@
 		<form name=turreg method=post>
 			<div class="admin-block field">
 				<label>Название</label>
-				<input type="text" name="title"> 
+				<input type="text" name="title" required> 
 			</div>
 			<div class="admin-block field">
 				<label>Краткое описание</label>
-				<input type="text" name="demotitle"> 
+				<input type="text" name="demotitle" required> 
 			</div>
 			
 			
@@ -110,7 +110,7 @@
 				<label>Игра</label>
 				
 				<div class="second-column-block-element">
-				<select name="game" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+				<select name="game" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1" required>
 				<?
 				$format = call("SELECT * FROM `game`");
 				$i=0;
@@ -125,7 +125,7 @@
 			
 			<div class="admin-block field">
 				<label>Время</label>
-				<input type="time" name="time"> 
+				<input type="time" name="time" required> 
 			</div>
 			
 			<? $format = call("SELECT * FROM `utilities_tournaments`"); ?>
@@ -133,7 +133,7 @@
 			<div class="admin-block field">
 				<label>Формат</label>
 		<div class="second-column-block-element">
-		<select name="format" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+		<select name="format" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1" required>
 		<? foreach($format as $value) {
 		if($value['determination']=='format'){
 		echo "<option value='".$value['value']."'>".$value['text']."</option>";
@@ -145,25 +145,25 @@
 			
 			<div class="admin-block field">
 				<label>Необходимое количество</label>
-				<input type="number" max="100" name="countFerst">
+				<input type="number" max="100" name="countFerst" required>
 			</div>
 			
 			<div class="admin-block field">
 				<label>полное описание</label>
-				<textarea name=fulltext></textarea>
+				<textarea name='fulltext' required></textarea>
 			</div>
 			<div class="admin-block field">
 				<label>Правила</label>
-				<textarea name=specification></textarea>
+				<textarea name='specification' required></textarea>
 			</div>
 			<div class="admin-block field">
 				<label>Дата проведения</label>
-				<input type="date" name="date"> 
+				<input type="date" name="date" required> 
 			</div>
 			<div class="admin-block field">
 				<label>статус</label>
 					<div class="second-column-block-element">
-					<select name="status" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1">
+					<select name="status" data-placeholder="Line" class="chosen-select" style="width:300px;" tabindex="1" required>
 					<? foreach($format as $value) {
 					if($value['determination']=='status'){
 					echo "<option value='".$value['value']."'>".$value['text']."</option>";
