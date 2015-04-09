@@ -831,7 +831,12 @@ color: white;
 .admin-form {
 	float: left;
 }
-
+.admin-button a {
+  text-decoration: none;
+  color: rgb(250, 250, 250);
+  background: #D82828;
+  padding: 5px 10px;
+}
 
 
 

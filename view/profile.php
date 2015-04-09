@@ -108,8 +108,8 @@ messegErrors($messegError);
 
 <? //админ панель ?>
 <?php if($result['special'] == 1){?>
-    <div>       
-     <li> <a href="/qwerty">Админ панель </a></li>
+    <div class="admin-button">       
+     <a href="/qwerty">Админ панель </a>
 	</div>
 <?php } ?>
 <? //админ панель ?>
