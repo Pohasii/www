@@ -819,7 +819,8 @@ color: white;
   font-size: 18px;
 }
 .description-pic {
-	  width: 531px;
+	width: 531px;
+	height: 544px;
   border: 1px solid #DA6823;
   padding: 4px;
   margin-top: -18px;

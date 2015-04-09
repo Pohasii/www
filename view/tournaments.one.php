@@ -71,12 +71,6 @@ VK.Widgets.Poll("vk_poll", {width: "300"}, "178299448_010b170d8fb1048e07");
 		
 	<?php echo $result['demotitle'];//краткое описание?>
 	
-
-		<div class="">
-		<?php if ($result['img']=='') { $scr='avatar.png'; } else $scr=$result['img'];?>
-			<img src="/img/<?=$scr?>">
-		</div>
-
 	</div>
 
 	<div id="demoTab" style="font-size: 16px; color:#F00;">
