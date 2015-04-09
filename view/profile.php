@@ -26,6 +26,14 @@
 <?
 $messegError=$result2;
 messegErrors($messegError);
+/*
+$array = array("name"=>"kommands", "user" => array ("user1","user2","user3","user4","user5","user6","user7"), "active" => array("active","active","inactive","inactive","active","inactive","active"));
+$array2=json_encode ($array);
+print_r($array);
+print_r($array2);
+$array2=json_decode($array2, true);
+print_r($array2);*/
+
 ?>
                 <h1>Личный кабинет :Ваш индификатор <?=$result['id'];?></h1>
 		<?php if ($result['ava']==NULL){$scr='ava.jpg';} else $scr=$result['ava']; ?>
@@ -102,6 +110,26 @@ messegErrors($messegError);
 			<input type="file" name="ava" accept="image/*"> 
 			<input class="button" name="avabut" type="submit" value="load">
 		</div>
+	</form>
+	</div>
+	
+	<div class="second-form">
+	<form method='post'>
+	<label>Название команды</label>
+	<input type="text" name="comname" required>
+	
+	<div class="second-column-block-element">
+		<select name="iduser[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
+					<?php 
+					$result = call("SELECT `id` FROM `user`");
+					foreach($result as $value) { 
+					echo "<option value='".$value['id']."'>".$value['id']."</option>";
+					}
+					?>
+		</select>
+	</div>
+
+	<input class="button" name="createcom" type="submit" value="создать">
 	</form>
 	</div>
 <? //личный кабинет ?>
