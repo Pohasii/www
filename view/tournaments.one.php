@@ -5,8 +5,18 @@
 		<div class="about-tournament-heading">
 			<h1><?php echo $result['title'];//титле (название)?></h1>
 			<div class="heading-span">
+				
+
+				<!-- Put this div tag to the place, where the Like block will be -->
+			<div id="vk_like"></div>
+			<script type="text/javascript">
+			VK.Widgets.Like("vk_like", {type: "button", verb: 1, height: 24});
+			</script>
 				<span><?php echo $result['status'];// статус (регистрация/завершон)?></span>
 			</div>
+			
+			
+			
 		</div>
 		<div class="full-description">
 			<div class="decription-element">
@@ -25,6 +35,13 @@
 				<label>Начало</label>
 				<span ><?php echo date_format(date_create($result['date']), 'd.m.y').'/'.$result['time'];?></span>
 			</div>
+			
+			<!-- Put this div tag to the place, where the Poll block will be -->
+<div id="vk_poll"></div>
+<script type="text/javascript">
+VK.Widgets.Poll("vk_poll", {width: "300"}, "178299448_010b170d8fb1048e07");
+</script>
+			
 		</div>
 		<div class="description-pic">
 			<img src="/img/turn/<?php echo $result['img'];//изображение?>" alt="Изображение сломалось:(" width="960px">
