@@ -1,12 +1,12 @@
 <div class="wrap">
-	<!--<?php if ($result['img']==NULL){$scr='/img/ava.jpg';} else $scr=$result; ?>
-	<div><img src="/img/<?//=$scr;?>"></img></div>-->
+	<?php if ($result['ava']==NULL){$scr='ava.jpg';} else $scr=$result['ava']; ?>
+
 	<div class="personal-full">
 		<div class="imgholder">
 			<div class="outer1 circle"></div>
 			<div class="outer2 circle"></div>
 			<figure>
-				<img src="<?php echo $scr;?>" />
+				<img src="/img/user/<?=$scr;?>" />
 				<figcaption class="caption" align=center><?php echo $result['name'];?></figcaption>
 			</figure>
 		</div>

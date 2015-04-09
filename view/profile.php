@@ -28,8 +28,18 @@ $messegError=$result2;
 messegErrors($messegError);
 ?>
                 <h1>Личный кабинет :Ваш индификатор <?=$result['id'];?></h1>
-		<?php if ($result['img']=='') { $scr='avatar.png'; } else $scr=$result['img'];?>
-			<img src="/img/<?=$scr?>">
+		<?php if ($result['ava']==NULL){$scr='ava.jpg';} else $scr=$result['ava']; ?>
+			
+			<div class="imgholder">
+			<div class="outer1 circle"></div>
+			<div class="outer2 circle"></div>
+			<figure>
+				<img src="/img/user/<?php echo $scr;?>" />
+				<figcaption class="caption" align=center><?php echo $result['name'];?></figcaption>
+			</figure>
+		</div>
+			
+			
 	<div class="first-form">
 		<form method='post'>
 				<div class="field">
@@ -82,6 +92,16 @@ messegErrors($messegError);
 			<input name="pass3" type="password"> 
 		</div>
 		<input class="button" name="newpass" type="submit" value="Update">
+	</form>
+	</div>
+	
+	<div class="second-form">
+	<form method='post' enctype="multipart/form-data">
+		<div class="field">
+			<label>Аватар</label>
+			<input type="file" name="ava" accept="image/*"> 
+			<input class="button" name="avabut" type="submit" value="load">
+		</div>
 	</form>
 	</div>
 <? //личный кабинет ?>
