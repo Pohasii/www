@@ -82,7 +82,8 @@ if (@$action[0]=='') {
 			$captain=$_SESSION["id"];
 			
 			$checkCommnadsName = call("SELECT * FROM `commands` WHERE `thename`='$name'");
-			if($checkCommnadsName == false){
+			$checkCommnadsExistence = call("SELECT * FROM `commands` WHERE `captain`='$captain'");
+			if($checkCommnadsName == false and $checkCommnadsExistence == false){
 				for($i=0;$i<5;$i++){
 					if($iduser[$i] != '') {
 						$iduser[$i]=$iduser[$i];

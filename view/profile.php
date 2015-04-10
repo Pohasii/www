@@ -113,6 +113,7 @@ print_r($array2);*/
 	</form>
 	</div>
 	
+	<? if($result['commands'] == 0) { ?>
 	<div class="second-form">
 	<form method='post'>
 	<label>Название команды</label>
@@ -132,6 +133,7 @@ print_r($array2);*/
 	<input class="button" name="createcom" type="submit" value="создать">
 	</form>
 	</div>
+	<? } ?>
 <? //личный кабинет ?>
 
 <? //админ панель ?>
