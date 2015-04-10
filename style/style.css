@@ -377,7 +377,7 @@ a#login_pop:hover, a#join_pop:hover {
   box-sizing: border-box;
   padding: 4px;
   color: white;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 .field input:focus {
   outline: 0;
@@ -742,24 +742,32 @@ a#login_pop:hover, a#join_pop:hover {
 .register-button {
   display: inline-block;
   box-sizing: border-box;
-  background: rgb(194, 29, 29);
-  color: rgb(239, 191, 174);
+  background: #D82828;
+  color: rgb(255, 253, 252);
   border: none;
   outline: none;
   padding: 10px 20px;
   font-size: 17px;
+  border-radius: 3px;
+  margin-top: 10px;
 }
 .register-button:hover{
 	cursor: pointer;
 	background: rgb(203, 67, 67);
 }
+/* .register {
+  background: #444;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+  float: right;
+} */
 /*tournament one*/
 .about-tournament-heading {
   text-align: center;
   font-size: 25px;
   border-bottom: 1px solid #DA6823;
   padding: 8px 0;
-  margin-bottom: 17px;
   color: #DA6823;
 }
 .personal-info-block {
@@ -780,25 +788,26 @@ a#login_pop:hover, a#join_pop:hover {
   left: -60px;
   top: 12px;
 }
-.decription-element {
+.description-element {
   display: inline-block;
 }
-.decription-element label, span {
+.description-element label, span {
   display: block;
   text-align: center;
 }
-.decription-element label {
+.description-element label {
   background: #DA6823;
   padding: 5px;
+    font-size: 13px;
 }
-.decription-element span {
+.description-element span {
   color: /*#33B858*/#299611;
   border: 1px solid #DA6823;
   padding: 5px;
+  border-radius: 0 0 5px 5px;
 }
 .full-description {
-  margin-top: -18px;
-  float: right;
+	display:inline-block;
 }
 .heading-span {
 	display: inline-block;
@@ -819,11 +828,14 @@ color: white;
   font-size: 18px;
 }
 .description-pic {
+  display: inline-block;
 	width: 531px;
-	height: 544px;
   border: 1px solid #DA6823;
   padding: 4px;
-  margin-top: -18px;
+    border-radius: 0 0 5px 5px;
+	min-width: 531px;
+	min-height: 366px;
+	vertical-align: top;
 }
 .description-pic img {
 	max-width: 100%;
@@ -832,7 +844,12 @@ color: white;
 .admin-form {
 	float: left;
 }
-
+.admin-button a {
+  text-decoration: none;
+  color: rgb(250, 250, 250);
+  background: #D82828;
+  padding: 5px 10px;
+}
 
 
 
