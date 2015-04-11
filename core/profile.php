@@ -103,12 +103,19 @@ if (@$action[0]=='') {
 					$idCommnads = $reloadcommnads[0]['id'];
 					$res = put("UPDATE `user` SET `commands`='$idCommnads' WHERE `email`='$email'");
 					if($res) {
-						$messegError['codeError'] = 32; $messegError['relode'] = true;
+						//$messegError['codeError'] = 32; $messegError['relode'] = true;
+						$messegError = array("codeError" => 32, "relode" => true);
 					} else {
 						$res = put("DELETE FROM `commands` WHERE `thename`='$name'");
-						$messegError['codeError'] = 33; $messegError['relode'] = false;}
-				} else {$messegError['codeError'] = 33; $messegError['relode'] = false;}
-			} else {$messegError['codeError'] = 34; $messegError['relode'] = false;}
+						//$messegError['codeError'] = 33; $messegError['relode'] = false;
+						$messegError = array("codeError" => 33, "relode" => false);
+						}	
+				} else {//$messegError = array("codeError" => 33, "relode" => false);
+					$messegError['codeError'] = 33; $messegError['relode'] = false;
+					}
+			} else {//$messegError['codeError'] = 34; $messegError['relode'] = false;
+			$messegError = array("codeError" => 34, "relode" => false);
+			}
 		}
 		
 		if($_POST['newpass']) {

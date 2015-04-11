@@ -122,8 +122,8 @@ print_r($array2);*/
 	<div class="second-column-block-element">
 		<select name="iduser[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
 					<?php 
-					$result = call("SELECT `id` FROM `user`");
-					foreach($result as $value) { 
+					$selectUserID = call("SELECT `id` FROM `user`");
+					foreach($selectUserID as $value) { 
 					echo "<option value='".$value['id']."'>".$value['id']."</option>";
 					}
 					?>
@@ -133,7 +133,56 @@ print_r($array2);*/
 	<input class="button" name="createcom" type="submit" value="создать">
 	</form>
 	</div>
-	<? } ?>
+	<? } else { 
+	$commandsok = call("SELECT * FROM `commands` WHERE `id`='".$result['commands']."'");
+	$selectUserID = call("SELECT `id` FROM `user`");
+	?>
+		
+		<div class="second-form">
+		<form method='post'>
+		<label>Название команды</label>
+		<?=$commandsok[0]['thename'];?>
+		<?
+		$participants=json_decode($commandsok[0]['participants'],true);
+		$status=json_decode($commandsok[0]['status'],true);
+		print_r($participants);
+		print_r($status);
+		?>
+		<div class="second-column-block-element">
+			<select name="iduser[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
+						<?php
+							$i=0;
+							foreach($selectUserID as $value) {
+								if($participants['participants'][$i] == $value['id']){
+									echo "<option value='".$value['id']."' selected>".$value['id']."</option>";
+									$i++;
+								}else echo "<option value='".$value['id']."'>".$value['id']."</option>";
+							}
+						?>
+			</select>
+			
+		</div>
+	
+		<input class="button" name="createcom" type="submit" value="создать">
+		</form>
+			<div class="second-column-block-element">
+			<?	
+			$i=0;
+			foreach($status['active'] as $value) {
+				if($participants['participants'][$i] != '-'){
+					if($value == 'inactive') { 
+						echo $participants['participants'][$i].$value;
+					} else {
+						echo $participants['participants'][$i].$value;
+					}
+				} else {}
+					
+				$i++;
+			}
+			?>		
+			</div>
+		</div>
+	<? }?>
 <? //личный кабинет ?>
 
 <? //админ панель ?>
