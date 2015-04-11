@@ -166,7 +166,7 @@ print_r($array2);*/
 								?>
 					</select>
 				</div>
-				<input class="button" name="editcom" type="submit" value="изминить">
+				<input class="button" name="editcom" type="submit" value="изменить">
 			</form>
 		</div>
 		
