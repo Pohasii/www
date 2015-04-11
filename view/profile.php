@@ -154,7 +154,7 @@ print_r($array2);*/
 				?>
 			<form method='post'>
 				<div class="second-column-block-element">
-					<select name="iduser[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
+					<select name="iduser[]" data-placeholder="gamers" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
 								<?php
 									$i=0;
 									foreach($selectUserID as $value) {

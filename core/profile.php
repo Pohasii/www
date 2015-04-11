@@ -79,7 +79,7 @@ if (@$action[0]=='') {
 			
 			$iduser = $_POST['iduser'];
 			
-			for($i=0;$i<5;$i++){
+			for($i=0;$i<=5;$i++){
 				if($iduser[$i] != '') {
 					$iduser[$i]=$iduser[$i];
 				} else $iduser[$i]='-';
@@ -123,7 +123,7 @@ if (@$action[0]=='') {
 			$checkCommnadsName = call("SELECT * FROM `commands` WHERE `thename`='$name'");
 			$checkCommnadsExistence = call("SELECT * FROM `commands` WHERE `captain`='$captain'");
 			if($checkCommnadsName == false and $checkCommnadsExistence == false){
-				for($i=0;$i<5;$i++){
+				for($i=0;$i<=5;$i++){
 					if($iduser[$i] != '') {
 						$iduser[$i]=$iduser[$i];
 					} else $iduser[$i]='-';
@@ -141,20 +141,44 @@ if (@$action[0]=='') {
 					$reloadcommnads = call("SELECT `id` FROM `commands` WHERE `thename`='$name'");
 					$idCommnads = $reloadcommnads[0]['id'];
 					$res = put("UPDATE `user` SET `commands`='$idCommnads' WHERE `email`='$email'");
-					if($res) {
-						//$messegError['codeError'] = 32; $messegError['relode'] = true;
+					if($res) {						
 						$messegError = array("codeError" => 32, "relode" => true);
+						
+						for($i=0;$i<=5;$i++){
+							if($iduser[$i] != '-') {
+								
+							$recipient=$iduser[$i];
+							
+							$sender = $_SESSION['id'];
+							
+							$notificationTitle = 'Join the team';
+							
+							$notificationBody="<form method='post'>
+							<input name='teamId' type='hidden' value='$idCommnads'>
+							<input name='userId' type='hidden' value='$recipient'>
+							<input class='button' name='jointeam' type='submit' value='вступить'>
+							<input class='button' name='delnot' type='submit' value='удалить'>
+							</form>";
+							$notificationBody=htmlspecialchars($notificationBody, ENT_QUOTES);
+							//htmlspecialchars_decode()
+							
+							$notificationMessage = "в ступайте в команду \"$name\", покарайте высоты!";
+							
+							$notificationDate = date('Y-m-d');
+							
+							$notificationStatus = 0;
+							
+							put("INSERT INTO `notification`(`sender`, `title`, `body`, `message`, `recipient`, `date`, `status`) VALUES ('$sender','$notificationTitle','$notificationBody','$notificationMessage','$recipient','$notificationDate','$notificationStatus')");
+							
+							} else {}
+						}
+																		
 					} else {
-						$res = put("DELETE FROM `commands` WHERE `thename`='$name'");
-						//$messegError['codeError'] = 33; $messegError['relode'] = false;
+						$res = put("DELETE FROM `commands` WHERE `thename`='$name'");						
 						$messegError = array("codeError" => 33, "relode" => false);
 						}	
-				} else {//$messegError = array("codeError" => 33, "relode" => false);
-					$messegError['codeError'] = 33; $messegError['relode'] = false;
-					}
-			} else {//$messegError['codeError'] = 34; $messegError['relode'] = false;
-			$messegError = array("codeError" => 34, "relode" => false);
-			}
+				} else {$messegError['codeError'] = 33; $messegError['relode'] = false;}
+			} else {$messegError = array("codeError" => 34, "relode" => false);}
 		}
 		
 		if($_POST['newpass']) {
