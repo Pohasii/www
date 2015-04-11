@@ -152,7 +152,7 @@
 
 <script type="text/javascript">
     var config = {
-      '.chosen-select'           : {max_selected_options: 5},
+      '.chosen-select'           : {max_selected_options: 6},
       '.chosen-select-deselect'  : {allow_single_deselect:true},
       '.chosen-select-no-single' : {disable_search_threshold:10},
       '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},

@@ -73,6 +73,41 @@ if (@$action[0]=='') {
 			}
 		}
 		
+		if($_POST['editcom']) {
+			
+			$idcaptain = $_SESSION['id'];
+			
+			$iduser = $_POST['iduser'];
+			
+			for($i=0;$i<5;$i++){
+				if($iduser[$i] != '') {
+					$iduser[$i]=$iduser[$i];
+				} else $iduser[$i]='-';
+			}
+			
+			$participants = array("participants" => array ("$iduser[0]","$iduser[1]","$iduser[2]","$iduser[3]","$iduser[4]","$iduser[5]"));
+			
+			$participants = json_encode($participants);                               						
+			$res = put("UPDATE `commands` SET `participants`='$participants' WHERE `captain`='$idcaptain'");
+
+			if($res) {
+				$messegError = array("codeError" => 35, "relode" => true);
+			} else $messegError = array("codeError" => 36, "relode" => false);
+		}
+		
+		if($_POST['deletecom']) {
+			
+			$idcaptain = $_SESSION['id'];
+			
+			$deleteComName = $_POST['deleteComName'];
+			
+			$res = put("DELETE FROM `commands` WHERE `thename`='$deleteComName'");
+
+			if($res) {
+				$messegError = array("codeError" => 37, "relode" => true);
+			} else $messegError = array("codeError" => 38, "relode" => false);
+		}
+		
 		if($_POST['createcom']) {
 			
 			$email = $_SESSION['login'];

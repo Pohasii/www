@@ -138,49 +138,60 @@ print_r($array2);*/
 	$selectUserID = call("SELECT `id` FROM `user`");
 	?>
 		
-		<div class="second-form">
-		<form method='post'>
-		<label>Название команды</label>
-		<?=$commandsok[0]['thename'];?>
-		<?
-		$participants=json_decode($commandsok[0]['participants'],true);
-		$status=json_decode($commandsok[0]['status'],true);
-		print_r($participants);
-		print_r($status);
-		?>
-		<div class="second-column-block-element">
-			<select name="iduser[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
-						<?php
-							$i=0;
-							foreach($selectUserID as $value) {
-								if($participants['participants'][$i] == $value['id']){
-									echo "<option value='".$value['id']."' selected>".$value['id']."</option>";
-									$i++;
-								}else echo "<option value='".$value['id']."'>".$value['id']."</option>";
-							}
-						?>
-			</select>
-			
+		<div class="second-form">			
+				<label>Название команды</label>
+				<?=$commandsok[0]['thename'];?>
+				<form method='post'>
+				<input name="deleteComName" type="hidden" value="<?=$commandsok[0]['thename'];?>">
+				<input class="button" name="deletecom" type="submit" value="удалить">
+				</form>
+				<?
+				$participants=json_decode($commandsok[0]['participants'],true);
+				$status=json_decode($commandsok[0]['status'],true);
+				//print_r($participants);
+				//print_r($status);
+				?>
+			<form method='post'>
+				<div class="second-column-block-element">
+					<select name="iduser[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
+								<?php
+									$i=0;
+									foreach($selectUserID as $value) {
+										if($participants['participants'][$i] == $value['id']){
+											echo "<option value='".$value['id']."' selected>".$value['id']."</option>";
+											$i++;
+										}else echo "<option value='".$value['id']."'>".$value['id']."</option>";
+									}
+								?>
+					</select>
+				</div>
+				<input class="button" name="editcom" type="submit" value="изминить">
+			</form>
 		</div>
-	
-		<input class="button" name="createcom" type="submit" value="создать">
-		</form>
+		
+		<div class="second-form">
 			<div class="second-column-block-element">
-			<?	
-			$i=0;
-			foreach($status['active'] as $value) {
-				if($participants['participants'][$i] != '-'){
-					if($value == 'inactive') { 
-						echo $participants['participants'][$i].$value;
-					} else {
-						echo $participants['participants'][$i].$value;
+				<form method=post>
+					<?	
+					$i=0;
+					foreach($status['active'] as $value) {
+						if($participants['participants'][$i] != '-'){
+							if($value == 'inactive') {//после "?\>"можно html ?>
+								<input name='active<?=$i;?>' type='checkbox' value='<?=$participants['participants'][$i]?>'>
+								<?=$participants['participants'][$i];?>
+						<?	} elseif($value == 'active') {//после "?\>"можно html ?>
+						
+								<?=$participants['participants'][$i];?>Активирован
+								
+							<?}
+						} else {}
+							
+						$i++;
 					}
-				} else {}
-					
-				$i++;
-			}
-			?>		
-			</div>
+					?>
+				</div>
+			<input class="button" name="activecom" type="submit" value="отправить">
+			</form>
 		</div>
 	<? }?>
 <? //личный кабинет ?>
