@@ -79,10 +79,23 @@ if (@$action[0]=='') {
 			
 			$iduser = $_POST['iduser'];
 			
+			$editCommnadsUser = call("SELECT * FROM `commands` WHERE `captain`='$idcaptain'");
+			
 			for($i=0;$i<=5;$i++){
 				if($iduser[$i] != '') {
 					$iduser[$i]=$iduser[$i];
 				} else $iduser[$i]='-';
+			}
+			
+			$editCommnadsUser = json_decode($editCommnadsUser[0]['participants'],true);
+			$i=0;
+			foreach($editCommnadsUser['participants'] as $value){
+				if($iduser[$i] == $value){					
+				} elseif($iduser[$i]== '-'){					
+				} else {
+					put("UPDATE `user` SET `commands`='0' WHERE `id`='$value'");
+				}
+				$i++;
 			}
 			
 			$participants = array("participants" => array ("$iduser[0]","$iduser[1]","$iduser[2]","$iduser[3]","$iduser[4]","$iduser[5]"));
@@ -101,10 +114,21 @@ if (@$action[0]=='') {
 			
 			$deleteComName = $_POST['deleteComName'];
 			
+			$deleteCommnadsUser = call("SELECT * FROM `commands` WHERE `thename`='$deleteComName'");
+			
 			$res = put("DELETE FROM `commands` WHERE `thename`='$deleteComName'");
 
 			if($res) {
 				$messegError = array("codeError" => 37, "relode" => true);
+				
+				$participants=json_decode($commandsok[0]['participants'],true);
+				
+				foreach($participants['participants'] as $value){
+					if($value != '-'){
+						put("UPDATE `user` SET `commands`='0' WHERE `id`='$value'");
+					}
+				}
+
 				$res = put("UPDATE `user` SET `commands`='0' WHERE `id`='$idcaptain'");
 				if($res) {
 					$messegError = array("codeError" => 37, "relode" => true);

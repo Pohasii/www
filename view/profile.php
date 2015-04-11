@@ -21,6 +21,7 @@
 		</form>
 	";
 	} else {
+		//print_r($_SESSION);
 ?>
 
 <?
@@ -124,8 +125,10 @@ print_r($array2);*/
 		<select name="iduser[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
 					<?php 
 					$selectUserID = call("SELECT `id` FROM `user`");
-					foreach($selectUserID as $value) { 
-					echo "<option value='".$value['id']."'>".$value['id']."</option>";
+					foreach($selectUserID as $value) {
+						if($value['id'] != $_SESSION['id']){
+							echo "<option value='".$value['id']."'>".$value['id']."</option>";
+						}
 					}
 					?>
 		</select>
@@ -158,10 +161,12 @@ print_r($array2);*/
 								<?php
 									$i=0;
 									foreach($selectUserID as $value) {
-										if($participants['participants'][$i] == $value['id']){
-											echo "<option value='".$value['id']."' selected>".$value['id']."</option>";
-											$i++;
-										}else echo "<option value='".$value['id']."'>".$value['id']."</option>";
+										if($value['id'] != $_SESSION['id']){	
+											if($participants['participants'][$i] == $value['id']){
+												echo "<option value='".$value['id']."' selected>".$value['id']."</option>";
+												$i++;
+											}else echo "<option value='".$value['id']."'>".$value['id']."</option>";
+										}	
 									}
 								?>
 					</select>
