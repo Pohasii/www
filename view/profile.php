@@ -74,8 +74,8 @@ print_r($array2);*/
 							foreach($games as $value) {
 								if($game[$i] == $value['game']){
 									echo "<option value='".$value['game']."' selected>".$value['game']."</option>";
+									$i++;
 								} else echo "<option value='".$value['game']."' ".$value['status'].">".$value['game']."</option>";
-								$i++;
 							}?>
 						</select>
 					</div>
@@ -108,8 +108,9 @@ print_r($array2);*/
 		<div class="field">
 			<label>Аватар</label>
 			<input type="file" name="ava" accept="image/*"> 
-			<input class="button" name="avabut" type="submit" value="load">
+			
 		</div>
+		<input class="button" name="avabut" type="submit" value="load">
 	</form>
 	</div>
 	
