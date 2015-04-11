@@ -105,6 +105,10 @@ if (@$action[0]=='') {
 
 			if($res) {
 				$messegError = array("codeError" => 37, "relode" => true);
+				$res = put("UPDATE `user` SET `commands`='0' WHERE `id`='$idcaptain'");
+				if($res) {
+					$messegError = array("codeError" => 37, "relode" => true);
+				} else $messegError = array("codeError" => 39, "relode" => false);
 			} else $messegError = array("codeError" => 38, "relode" => false);
 		}
 		
