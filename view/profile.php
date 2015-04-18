@@ -21,11 +21,20 @@
 		</form>
 	";
 	} else {
+		//print_r($_SESSION);
 ?>
 
 <?
 $messegError=$result2;
 messegErrors($messegError);
+/*
+$array = array("name"=>"kommands", "user" => array ("user1","user2","user3","user4","user5","user6","user7"), "active" => array("active","active","inactive","inactive","active","inactive","active"));
+$array2=json_encode ($array);
+print_r($array);
+print_r($array2);
+$array2=json_decode($array2, true);
+print_r($array2);*/
+
 ?>
                 <h1>Личный кабинет :Ваш индификатор <?=$result['id'];?></h1>
 		<?php if ($result['ava']==NULL){$scr='ava.jpg';} else $scr=$result['ava']; ?>
@@ -66,8 +75,8 @@ messegErrors($messegError);
 							foreach($games as $value) {
 								if($game[$i] == $value['game']){
 									echo "<option value='".$value['game']."' selected>".$value['game']."</option>";
+									$i++;
 								} else echo "<option value='".$value['game']."' ".$value['status'].">".$value['game']."</option>";
-								$i++;
 							}?>
 						</select>
 					</div>
@@ -100,10 +109,97 @@ messegErrors($messegError);
 		<div class="field">
 			<label>Аватар</label>
 			<input type="file" name="ava" accept="image/*"> 
-			<input class="button" name="avabut" type="submit" value="load">
+			
 		</div>
+		<input class="button" name="avabut" type="submit" value="load">
 	</form>
 	</div>
+	
+	<? if($result['commands'] == 0) { ?>
+	<div class="second-form">
+	<form method='post'>
+	<label>Название команды</label>
+	<input type="text" name="comname" required>
+	
+	<div class="second-column-block-element">
+		<select name="iduser[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
+					<?php 
+					$selectUserID = call("SELECT `id` FROM `user`");
+					foreach($selectUserID as $value) {
+						if($value['id'] != $_SESSION['id']){
+							echo "<option value='".$value['id']."'>".$value['id']."</option>";
+						}
+					}
+					?>
+		</select>
+	</div>
+
+	<input class="button" name="createcom" type="submit" value="создать">
+	</form>
+	</div>
+	<? } else { 
+	$commandsok = call("SELECT * FROM `commands` WHERE `id`='".$result['commands']."'");
+	$selectUserID = call("SELECT `id` FROM `user`");
+	?>
+		
+		<div class="second-form">			
+				<label>Название команды</label>
+				<?=$commandsok[0]['thename'];?>
+				<form method='post'>
+				<input name="deleteComName" type="hidden" value="<?=$commandsok[0]['thename'];?>">
+				<input class="button" name="deletecom" type="submit" value="удалить">
+				</form>
+				<?
+				$participants=json_decode($commandsok[0]['participants'],true);
+				$status=json_decode($commandsok[0]['status'],true);
+				//print_r($participants);
+				//print_r($status);
+				?>
+			<form method='post'>
+				<div class="second-column-block-element">
+					<select name="iduser[]" data-placeholder="gamers" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
+								<?php
+									$i=0;
+									foreach($selectUserID as $value) {
+										if($value['id'] != $_SESSION['id']){	
+											if($participants['participants'][$i] == $value['id']){
+												echo "<option value='".$value['id']."' selected>".$value['id']."</option>";
+												$i++;
+											}else echo "<option value='".$value['id']."'>".$value['id']."</option>";
+										}	
+									}
+								?>
+					</select>
+				</div>
+				<input class="button" name="editcom" type="submit" value="изменить">
+			</form>
+		</div>
+		
+		<div class="second-form">
+			<div class="second-column-block-element">
+				<form method=post>
+					<?	
+					$i=0;
+					foreach($status['active'] as $value) {
+						if($participants['participants'][$i] != '-'){
+							if($value == 'inactive') {//после "?\>"можно html ?>
+								<input name='active<?=$i;?>' type='checkbox' value='<?=$participants['participants'][$i]?>'>
+								<?=$participants['participants'][$i];?>
+						<?	} elseif($value == 'active') {//после "?\>"можно html ?>
+						
+								<?=$participants['participants'][$i];?>Активирован
+								
+							<?}
+						} else {}
+							
+						$i++;
+					}
+					?>
+				</div>
+			<input class="button" name="activecom" type="submit" value="отправить">
+			</form>
+		</div>
+	<? }?>
 <? //личный кабинет ?>
 
 <? //админ панель ?>
