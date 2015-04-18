@@ -1,10 +1,8 @@
 <?php
 if($_POST['sub']=='Sing in'){
 
-		$login = $_POST['email'];
-		$password = $_POST['pass'];
-		$login = che($login);
-		$password = che($password);
+		$login = che($_POST['email']);		
+		$password = che($_POST['pass']);
 		$security='zagadka';
 		$password= md5("$password$security");
 		$result = call("SELECT * FROM `user` WHERE `email`='$login'");
@@ -195,23 +193,23 @@ if($_POST['sub']=='Sing in'){
 	
 	if($_POST['sub']=='Sing up'){
 		
-		$password = $_POST['pass'];
+		$password = che($_POST['pass']);
 		
-		$password2 = $_POST['pass2'];
+		$password2 = che($_POST['pass2']);
 		
-		$email = $_POST['email'];
+		$email = che($_POST['email']);
 		
-		$name = $_POST['name'];
+		$name = che($_POST['name']);
+		
 		$game = $_POST['game'];
+		
 		$regd = date('Y-m-d');
 		$key = rand();
 		$key = md5("$key");
 		$game=json_encode($game);
 		
-		$email = che($email);
-		$password = che($password);
-		$password2 = che($password2);
-		$name = che($name);
+
+
 		
 		if ($password == $password2) { 
 		

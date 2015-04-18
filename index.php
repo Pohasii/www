@@ -23,6 +23,7 @@ function messegErrors($messegError){
 
 function che($result){
 	$result = stripslashes($result);
+	$result = mysql_real_escape_string($result);
 	$result = htmlspecialchars($result);
 	$result = trim($result);
 	return $result;

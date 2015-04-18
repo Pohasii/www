@@ -4,14 +4,14 @@ if (@$action[0]=='') {
 	echo '<script>window.location.href = "/" </script>';
 } else {
 	if(@$action[0]) {
-		$result = call("SELECT * FROM `user` WHERE `email`='$action[0]'");
+		$email= che($action[0]);
+		$result = call("SELECT * FROM `user` WHERE `email`='$email'");
 		if((isset($_SESSION["keys"]) and $_SESSION["keys"]==$result[0]['keys']) and $_SESSION["ip"]==$ip and (isset($_SESSION["login"]) and $_SESSION["login"]==$result[0]['email'])){
 			
 		$title = $result[0]['title'];
 		
 		if($_POST['Activate'] == 'Activate'){
-			$code = $_POST['status'];
-			$code = che($code);
+			$code = che($_POST['status']);
 			$email = $_SESSION['login'];
 			$result = call("SELECT * FROM `user` WHERE `email`='$email'");
 				if($result[0]['key']==$code){
@@ -37,7 +37,7 @@ if (@$action[0]=='') {
 		if($_POST['avabut']) {
 
 			$email = $_SESSION['login'];
-			$id = $_SESSION['id'];
+			$id =(int) $_SESSION['id'];
 				
 			if($_FILES['ava']['size']>10){
 				if($_FILES['ava']['size']<=2097152) {
@@ -57,14 +57,11 @@ if (@$action[0]=='') {
 		
 		if($_POST['saveinf']) {
 			
-			$email = $_SESSION['login'];
-			
+			$email = che($_SESSION['login']);			
 			$name = che($_POST['name']);
 			$nicgame = che($_POST['nicgame']);
 			$game = $_POST['game'];
 			$game = json_encode($game);                                                                                                 
-			
-			
 			$res = put("UPDATE `user` SET `name`='$name', `nicgame`='$nicgame', `game`='$game' WHERE `email`='$email'");
 			
 			if($res) {
@@ -73,11 +70,13 @@ if (@$action[0]=='') {
 			}
 		}
 		
-		if($_POST['editcom']) {
+		if($_POST['editcom']){
 			
-			$idcaptain = $_SESSION['id'];
+			$idcaptain = (int)$_SESSION['id'];
 			
-			$iduser = $_POST['iduser'];
+			$iduser = (int)$_POST['iduser'];
+			
+			
 			
 			$editCommnadsUser = call("SELECT * FROM `commands` WHERE `captain`='$idcaptain'");
 			
@@ -90,8 +89,10 @@ if (@$action[0]=='') {
 			$editCommnadsUser = json_decode($editCommnadsUser[0]['participants'],true);
 			$i=0;
 			foreach($editCommnadsUser['participants'] as $value){
-				if($iduser[$i] == $value){					
-				} elseif($iduser[$i]== '-'){					
+				if($iduser[$i] == $value){
+					
+				} elseif($iduser[$i]== '-'){
+					
 				} else {
 					put("UPDATE `user` SET `commands`='0' WHERE `id`='$value'");
 				}
@@ -110,9 +111,9 @@ if (@$action[0]=='') {
 		
 		if($_POST['deletecom']) {
 			
-			$idcaptain = $_SESSION['id'];
+			$idcaptain = (int)$_SESSION['id'];
 			
-			$deleteComName = $_POST['deleteComName'];
+			$deleteComName = che($_POST['deleteComName']);
 			
 			$deleteCommnadsUser = call("SELECT * FROM `commands` WHERE `thename`='$deleteComName'");
 			
@@ -141,8 +142,8 @@ if (@$action[0]=='') {
 			$email = $_SESSION['login'];
 			
 			$name = che($_POST['comname']);
-			$iduser = $_POST['iduser'];
-			$captain=$_SESSION["id"];
+			$iduser =(int) $_POST['iduser'];
+			$captain=(int)$_SESSION["id"];
 			
 			$checkCommnadsName = call("SELECT * FROM `commands` WHERE `thename`='$name'");
 			$checkCommnadsExistence = call("SELECT * FROM `commands` WHERE `captain`='$captain'");
@@ -173,7 +174,7 @@ if (@$action[0]=='') {
 								
 							$recipient=$iduser[$i];
 							
-							$sender = $_SESSION['id'];
+							$sender =(int) $_SESSION['id'];
 							
 							$notificationTitle = 'Join the team';
 							
