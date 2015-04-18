@@ -836,6 +836,7 @@ color: white;
 	min-width: 531px;
 	min-height: 366px;
 	vertical-align: top;
+  border-top: none;
 }
 .description-pic img {
 	max-width: 100%;
