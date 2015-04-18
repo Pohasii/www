@@ -106,7 +106,7 @@ print_r($array2);*/
 	
 	<div class="second-form">
 	<form method='post' enctype="multipart/form-data">
-		<div class="field">
+		<div class="field avatar-change">
 			<label>Аватар</label>
 			<input type="file" name="ava" accept="image/*"> 
 			
@@ -116,12 +116,13 @@ print_r($array2);*/
 	</div>
 	
 	<? if($result['commands'] == 0) { ?>
-	<div class="second-form">
+	<div class="second-form team-name">
 	<form method='post'>
-	<label>Название команды</label>
-	<input type="text" name="comname" required>
-	
-	<div class="second-column-block-element">
+	<div class="field">
+		<label>Название команды</label>
+		<input type="text" name="comname" required>
+	</div>
+	<div class="second-form">
 		<select name="iduser[]" data-placeholder="Line" class="chosen-select" multiple style="width:300px;" tabindex="1" required>
 					<?php 
 					$selectUserID = call("SELECT `id` FROM `user`");
@@ -132,10 +133,10 @@ print_r($array2);*/
 					}
 					?>
 		</select>
+		<input class="button" name="createcom" type="submit" value="создать">
 	</div>
-
-	<input class="button" name="createcom" type="submit" value="создать">
 	</form>
+
 	</div>
 	<? } else { 
 	$commandsok = call("SELECT * FROM `commands` WHERE `id`='".$result['commands']."'");
