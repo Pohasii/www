@@ -60,8 +60,8 @@ if (@$action[0]=='') {
 			$email = che($_SESSION['login']);			
 			$name = che($_POST['name']);
 			$nicgame = che($_POST['nicgame']);
-			$game = $_POST['game'];
-			$game = json_encode($game);                                                                                                 
+			$game = json_encode($_POST['game']);
+			
 			$res = put("UPDATE `user` SET `name`='$name', `nicgame`='$nicgame', `game`='$game' WHERE `email`='$email'");
 			
 			if($res) {
